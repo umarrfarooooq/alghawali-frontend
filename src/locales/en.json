@@ -1,0 +1,139 @@
+{
+    "upperHeader":{
+        "language": {
+            "english": "English",
+            "arabic": "عربي"
+          },
+          "contact": {
+            "email": "Email@example.com",
+            "phone": "+123-456-7890"
+        }
+    },
+    "navbar": {
+        "menuItems": {
+          "home": "Home",
+          "aboutUs": "About Us",
+          "services": "Services",
+          "blog": "Blog",
+          "contactUs": "Contact Us",
+          "logout": "Logout",
+          "login": "Login"
+        },
+        "logoAltText": "Your Company"
+      },
+      "section": {
+        "subtitle": "Providing the best",
+        "title1": "MANPOWER",
+        "title2": "SOLUTIONS",
+        "subtitle2": "All Across OMAN",
+        "description": "Al Ghawali Manpower Supply excels in delivering proficient housemaids, experienced waitresses, and more, catering to diverse staffing needs across Oman with unmatched reliability and professionalism.",
+        "buttonText": "Contact Us"
+      },
+      "services": {
+        "sectionTitle": "Services",
+        "seeAllButton": "See All",
+        "categories": {
+            "fCatNam":"House Maids",
+            "sCatNam":"Barista",
+            "tCatNam":"Waitress",
+            "forthCatNam":"Nurses"
+        },
+        "showProfileBtn":"Show Profiles"
+      },
+      "profilesSection": {
+        "title": "Available Profiles",
+        "buttonText": "See All"
+    },
+    "chooseUsSection": {
+      "mainText": "Choose us for unmatched excellence in service, budget-friendly rates, and rapid deployment, ensuring your staffing needs are met with utmost satisfaction.",
+      "subTitle": "Why Choose Us",
+      "features": {
+        "feature1": {
+          "title": "Professional Approach",
+          "detail": "Our team of experienced professionals is committed to delivering exceptional service and results for your staffing needs. We prioritize your success."
+        },
+        "feature2": {
+          "title": "Cheapest Prices",
+          "detail": "We offer some of the most competitive rates in the industry, allowing you to maximize your budget while still receiving top-notch staffing solutions."
+        },
+        "feature3": {
+          "title": "Easy Processing",
+          "detail": "Our streamlined and hassle-free processing ensures that you can quickly and efficiently meet your staffing requirements without unnecessary delays or complications."
+        }
+      }
+    },
+    "testimonials": {
+        "title": "What Our Clients Say About Us"
+    },
+    "needHelpSection": {
+        "title": "Need Help ?",
+        "description": "If you are looking for expert assistance, leave your mobile number below and our experts will contact you right away!",
+        "buttonText": "Submit"
+    },
+    "footer": {
+        "resourcesTitle": "Resources",
+        "followUsTitle": "Follow us",
+        "legalTitle": "Legal",
+        "privacyPolicy": "Privacy Policy",
+        "termsAndConditions": "Terms & Conditions",
+        "copyright": "© 2023 AL Alghawali. All Rights Reserved."
+    },
+    "aboutUs": {
+      "sectionTitle": "About Us: Alghawali Man Power",
+      "paragraph": "At Alghawali Man Power, we take pride in being your reliable partner in fulfilling the domestic needs of your home. Our commitment to excellence and dedication to providing top-tier maid supply services set us apart as a trusted choice for households seeking professional and dependable assistance. Our mission is to enhance the quality of life for families by seamlessly connecting them with skilled and qualified maids. We understand the importance of a harmonious home environment, and our goal is to contribute to that harmony by delivering exceptional maid supply services that cater to your unique requirements."
+    },
+
+      "contactForm": {
+        "sectionTitle": "Get In Touch",
+        "placeholderName": "Your Name",
+        "placeholderEmail": "Your Email",
+        "placeholderPhone": "Your Phone number",
+        "placeholderMessage": "Message",
+        "submitButton": "Send Msg"
+      },
+      "supportSection": {
+        "sectionTitle": "Support",
+        "dubaiOffice": {
+          "title": "Dubai Office",
+          "address": "Shop # 17, MBAL Building, Block B, Al Suq Al Kabeer, Bur Dubai, UAE"
+        },
+        "omanOffice": {
+          "title": "Oman Office",
+          "address": "Building # 1/27, Block 240, Way 4004, Souk Al Ghubrah Street, Muscat, Oman"
+        }
+      },
+      "allProfiles":{
+        "searchBtn":"Search Here"
+      },
+      "maidDetail": {
+        "interviewSuccessMessage": "Interview Planned Successfully, we will contact you soon",
+        "codeLabel": "Code:",
+        "nationalityLabel": "Nationality:",
+        "ageLabel": "Age:",
+        "experienceLabel": "Experience:",
+        "salaryLabel": "Monthly Salary:",
+        "priceLabel": "Price:",
+        "downloadCVButton": "Download CV",
+        "planInterviewButton": "Plan Interview"
+      },
+      "filterContainer": {
+        "filter":"Filter",
+        "jobTypeLabel": "Job Type",
+        "salaryRangeLabel": "Salary Range",
+        "youHaveLabel": "You Have"
+      },
+      "filterItems": {
+        "fullTime": "Full-Time",
+        "monthlyBased": "Monthly Based",
+        "under100": "Under 100",
+        "100-150": "100 - 150",
+        "150-300": "150 - 300",
+        "babiesLessThan2Years": "Babies < 2 Years",
+        "moreThan2Kids": "More than 2 kids",
+        "noSundayOff": "No Sunday Off",
+        "hasPet": "A Pet",
+        "hasDog": "A Dog"
+      }
+        
+  }
+  

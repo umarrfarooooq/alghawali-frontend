@@ -1,0 +1,26 @@
+.navBar{
+    background: #253061;
+}
+.navItemTxt{
+    color:#253061 ;
+}
+.upperHeader{
+  background: #EDF1FC;color: #000B41;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  padding-block: .4rem;
+}
+className:after {
+    content: "";
+    display: block;
+    height: 2px;
+    background-color: #1bcfc6;
+    width: 0;
+    transition: width 0.3s ease-in-out;
+  }
+  
+  className:hover:after {
+    width: 100%;
+  }
+  
