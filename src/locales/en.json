@@ -71,12 +71,12 @@
         "buttonText": "Submit"
     },
     "footer": {
-        "resourcesTitle": "Resources",
+        "Services": "Services",
         "followUsTitle": "Follow us",
         "legalTitle": "Legal",
         "privacyPolicy": "Privacy Policy",
         "termsAndConditions": "Terms & Conditions",
-        "copyright": "© 2023 AL Alghawali. All Rights Reserved."
+        "copyright": "© 2023 Al-Ghawali ManPower. All Rights Reserved."
     },
     "aboutUs": {
       "sectionTitle": "About Us: Alghawali Man Power",
@@ -94,12 +94,8 @@
       "supportSection": {
         "sectionTitle": "Support",
         "dubaiOffice": {
-          "title": "Dubai Office",
-          "address": "Shop # 17, MBAL Building, Block B, Al Suq Al Kabeer, Bur Dubai, UAE"
-        },
-        "omanOffice": {
-          "title": "Oman Office",
-          "address": "Building # 1/27, Block 240, Way 4004, Souk Al Ghubrah Street, Muscat, Oman"
+          "title": "Office",
+          "address": "Shop No. 2795, near the Social Security Office, Al-Humber Street, Sohar, Oman."
         }
       },
       "allProfiles":{
@@ -133,6 +129,13 @@
         "noSundayOff": "No Sunday Off",
         "hasPet": "A Pet",
         "hasDog": "A Dog"
+      },
+      "onDemand":{
+        "comingSoon": "Coming Soon",
+        "heading": "We Provide this Category of workers on demand only.",
+        "subTxt": "Please enter your number, our team will get back to you",
+        "inputPlaceholder": "Enter Your Ph. No",
+        "submitButton": "Submit"
       }
         
   }

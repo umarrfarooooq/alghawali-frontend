@@ -24,7 +24,7 @@ const AboutUsMain = () =>{
                             <div className="lg:ms-7">
                                 <h3 className="mb-4 md:text-2xl text-xl font-medium">{t('aboutUs.sectionTitle')}</h3>
 
-                                <p className="text-slate-400 dark:text-slate-300 max-w-2xl mx-auto">{t('aboutUs.paragraph')}
+                                <p className="text-slate-400 dark:text-slate-300">{t('aboutUs.paragraph')}
                                 </p> 
                             </div>
                         </div>

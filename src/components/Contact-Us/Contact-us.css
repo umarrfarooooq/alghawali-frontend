@@ -42,6 +42,13 @@ input::-webkit-inner-spin-button {
     .contactUsForm select{
     width: 100%;
 }
+.inputts{
+    flex-direction: column;
+}
+.rtlinputt{
+
+    margin-left: 0 !important;
+}
 }
 
 @media (max-width:450px){

@@ -8,7 +8,7 @@ const WhyChooseUs = ()=>{
         <div>
           <section
             id="features"
-            className="container relative block px-6 py-10 md:py-20 md:px-10"
+            className="container relative block py-10 md:py-20"
           >
             <div className="relative mx-auto max-w-5xl text-center">
               <h2 className="block w-full bg-gradient-to-b bg-clip-text font-bold  text-3xl sm:text-4xl">
@@ -20,7 +20,7 @@ const WhyChooseUs = ()=>{
               </p>
             </div>
     
-            <div className="relative mx-auto max-w-7xl z-10 grid grid-cols-1 gap-10 pt-14 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="relative z-10 grid grid-cols-1 gap-10 pt-14 sm:grid-cols-2 lg:grid-cols-3">
               {/* Customizable */}
               <div style={{backgroundColor:"#253061"}} className="rounded-md border border-neutral-800 p-8 text-center shadow">
               <div className="button-text mx-auto flex h-12 w-12 items-center justify-center rounded-md border" style={{ background:"white" }}>

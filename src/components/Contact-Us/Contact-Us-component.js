@@ -18,7 +18,8 @@ const ContactUsComponent = () => {
             {t("contactForm.sectionTitle")}{" "}
           </h2>
           <form className="contactUsForm" onSubmit={handleContactUsForm}>
-            <input
+          <div className="inputts flex items-center justify-between">
+          <input
               placeholder={t("contactForm.placeholderName")}
               type="text"
               name="name"
@@ -30,6 +31,8 @@ const ContactUsComponent = () => {
               name="email"
               required
             />
+          </div>
+            
             <input
               className="block w-full"
               placeholder={t("contactForm.placeholderPhone")}
@@ -68,12 +71,15 @@ const ContactUsComponent = () => {
               </p>
             </div>
             <div className="store-hours mt-4">
-              <h3 className="font-bold text-xl py-1">
-                {t("supportSection.omanOffice.title")}
-              </h3>
-              <p>
-                {t("supportSection.omanOffice.address")}
-              </p>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3635.0650103922485!2d56.73394227535456!3d24.34422797826981!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjTCsDIwJzM5LjIiTiA1NsKwNDQnMTEuNSJF!5e0!3m2!1sen!2s!4v1694964831255!5m2!1sen!2s"
+                className="shadow-xl rounded-xl w-full"
+                height="300"
+                style={{border:"0"}}
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Our Location">
+               </iframe>
             </div>
           </div>
         </div>

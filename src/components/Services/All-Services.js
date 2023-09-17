@@ -13,14 +13,10 @@ const AllServices = () =>{
         return(
             <> 
                 <div className="space-y-4 md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-12 md:space-y-0 container my-12">
-                    <ServiceCard catName={t('services.categories.fCatNam')} image={First_Image}/>
-                    <ServiceCard catName={t('services.categories.sCatNam')} image={Second_Image}/>
-                    <ServiceCard catName={t('services.categories.tCatNam')} image={Third_Image}/>
-                    <ServiceCard catName={t('services.categories.forthCatNam')} image={Forth_Image}/>
-                    <ServiceCard catName={t('services.categories.fCatNam')} image={First_Image}/>
-                    <ServiceCard catName={t('services.categories.sCatNam')} image={Second_Image}/>
-                    <ServiceCard catName={t('services.categories.tCatNam')} image={Third_Image}/>
-                    <ServiceCard catName={t('services.categories.forthCatNam')} image={Forth_Image}/>
+                <ServiceCard address={"/all-profiles"} catName={t('services.categories.fCatNam')} image={First_Image}/>
+                    <ServiceCard address={"/on-demand"} catName={t('services.categories.sCatNam')} image={Second_Image}/>
+                    <ServiceCard address={"/on-demand"} catName={t('services.categories.tCatNam')} image={Third_Image}/>
+                    <ServiceCard address={"/on-demand"} catName={t('services.categories.forthCatNam')} image={Forth_Image}/>
                 </div>
             
             </>

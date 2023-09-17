@@ -111,9 +111,7 @@ const MaidDetailMainSection = (props) => {
               <h2 className="font-semibold text-4xl mb-3">{maidDetails.name}</h2>
               <p className="mb-3">{t('maidDetail.nationalityLabel')} <span>{maidDetails.nationality}</span></p>
               <p className="mb-3">{t('maidDetail.ageLabel')} <span>{maidDetails.age} </span>Years</p>
-              <p className="mb-3">{t('maidDetail.experienceLabel')} <span>2 </span>Years Kuwait</p>
               <p className="mb-3">{t('maidDetail.salaryLabel')} <span>{maidDetails.salery} </span>OMR </p>
-              <p className="mb-3">{t('maidDetail.priceLabel')} <span>{maidDetails.price} </span>OMR </p>
               {loading && <p>Downloading...</p>}
 
               <div className="flex items-center gap-4 mt-8">

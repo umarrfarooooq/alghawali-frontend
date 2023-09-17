@@ -33,7 +33,7 @@ const UpperHeader = () => {
           </div>
           <div className="mb-2">
             <FontAwesomeIcon icon={faPhone} className="mr-1" />
-            <span>+968 78013784</span>
+            <span>+968 7744 7719</span>
           </div>
         </div>
         <div className="mb-2">

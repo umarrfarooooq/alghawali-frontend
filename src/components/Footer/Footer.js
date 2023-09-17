@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './img/logo.svg'
 import "./Footer.css"
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 function Footer() {
   const { t } = useTranslation();
@@ -9,22 +10,32 @@ function Footer() {
   return (
     <div>
     <footer className="p-4 bg-white sm:p-6 dark:bg-gray-800 container">
-      <div className="mx-auto max-w-screen-xl">
+      <div>
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
-            <a href="/" className="flex items-center">
-              <img src={logo} className="mr-3 h-24" alt="FlowBite Logo" />
-            </a>
+          <div className="flex items-center">
+            <Link to={"/"}>
+              <img src={logo} className=" h-24" alt="Company Logo Logo" />
+            </Link>
+          </div>
+            
           </div>
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
             <div>
-              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">{t('footer.resourcesTitle')}</h2>
+              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">{t('footer.Services')}</h2>
               <ul className="text-gray-600 dark:text-gray-400">
+              
                 <li className="mb-4">
-                  <a href="/" className="hover:underline">Alghawali</a>
+                  <Link to={"/all-profiles"}>Maids</Link>
+                </li>
+                <li className="mb-4">
+                  <Link to={"/services"}>Nurses</Link>
+                </li>
+                <li className="mb-4">
+                  <Link to={"/services"}>Barista</Link>
                 </li>
                 <li>
-                  <a href="/" className="hover:underline">Swift</a>
+                  <Link to={"/services"}>Waitress</Link>
                 </li>
               </ul>
             </div>
@@ -32,10 +43,17 @@ function Footer() {
               <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">{t('footer.followUsTitle')}</h2>
               <ul className="text-gray-600 dark:text-gray-400">
                 <li className="mb-4">
-                  <a href="/" className="hover:underline">Github</a>
+                  <a rel="noopener noreferrer" target='_blank' href='https://instagram.com/al.ghawalimanpower?igshid=MzRlODBiNWFlZA=='>Instagram</a>
+                  
+                </li>
+                <li className="mb-4">
+                  <a rel="noopener noreferrer" target='_blank' href="https://twitter.com/alghawaliman" className="hover:underline">Twitter</a>
+                </li>
+                <li className="mb-4">
+                  <a rel="noopener noreferrer" target='_blank' href="https://www.linkedin.com/company/alghawalimanpower/?viewAsMember=true" className="hover:underline">LinkedIn</a>
                 </li>
                 <li>
-                  <a href="/" className="hover:underline">Discord</a>
+                  <a rel="noopener noreferrer" target='_blank' href="https://web.facebook.com/profile.php?id=61550262875345" className="hover:underline">Facebook</a>
                 </li>
               </ul>
             </div>
@@ -43,10 +61,10 @@ function Footer() {
               <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">{t('footer.legalTitle')}</h2>
               <ul className="text-gray-600 dark:text-gray-400">
                 <li className="mb-4">
-                  <a href="/" className="hover:underline">{t('footer.privacyPolicy')}</a>
+                <Link to={"/privacy-policy"}>{t('footer.privacyPolicy')}</Link>
                 </li>
                 <li>
-                  <a href="/" className="hover:underline">{t('footer.termsAndConditions')}</a>
+                <Link to={"/terms-conditions"}>{t('footer.termsAndConditions')}</Link>
                 </li>
               </ul>
             </div>
@@ -57,28 +75,6 @@ function Footer() {
           <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
           {t('footer.copyright')}
           </span>
-          <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
-            <a href="/" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                {/* ... Facebook SVG path here ... */}
-              </svg>
-            </a>
-            <a href="/" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                {/* ... Twitter SVG path here ... */}
-              </svg>
-            </a>
-            <a href="/" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                {/* ... LinkedIn SVG path here ... */}
-              </svg>
-            </a>
-            <a href="/" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                {/* ... Instagram SVG path here ... */}
-              </svg>
-            </a>
-          </div>
         </div>
       </div>
     </footer>

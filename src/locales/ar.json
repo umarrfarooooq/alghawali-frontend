@@ -72,12 +72,12 @@
         "buttonText": "إرسال"
     },
     "footer": {
-        "resourcesTitle": "المصادر",
-        "followUsTitle": "تابعنا",
-        "legalTitle": "قانوني",
-        "privacyPolicy": "سياسة الخصوصية",
-        "termsAndConditions": "الشروط والأحكام",
-        "copyright": "© 2023 AL Alghawali. جميع الحقوق محفوظة."
+      "Services": "الخدمات",
+      "followUsTitle": "تابعنا",
+      "legalTitle": "قانوني",
+      "privacyPolicy": "سياسة الخصوصية",
+      "termsAndConditions": "الشروط والأحكام",
+      "copyright": "© 2023 AL Alghawali. جميع الحقوق محفوظة."
     },
     "aboutUs": {
       "sectionTitle": "معلومات عنا: شركة الغوالي للعمالة",
@@ -95,12 +95,8 @@
       "supportSection": {
         "sectionTitle": "الدعم",
         "dubaiOffice": {
-          "title": "مكتب دبي",
-          "address": "محل # 17، مبنى MBAL، الكتلة ب، السوق الكبير، بر دبي، الإمارات"
-        },
-        "omanOffice": {
-          "title": "مكتب عمان",
-          "address": "مبنى # 1/27، الكتلة 240، الطريق 4004، شارع سوق الغبرة، مسقط، عمان"
+          "title": "مكتب ",
+          "address": "المحل رقم 2795، بالقرب من مكتب الضمان الاجتماعي، شارع الهمبر، صحار، عمان."
         }
       },
       "allProfiles": {
@@ -134,6 +130,13 @@
       "noSundayOff": "بدون عطلة يوم الأحد",
       "hasPet": "لديك حيوان أليف",
       "hasDog": "لديك كلب"
+    },
+    "onDemand": {
+      "comingSoon": "قريبًا",
+      "heading": "نحن نقدم هذه الفئة من العمال حسب الطلب فقط.",
+      "subTxt": "الرجاء إدخال رقم هاتفك، سيتصل بك فريقنا",
+      "inputPlaceholder": "أدخل رقم هاتفك",
+      "submitButton": "إرسال"
     }
         
     

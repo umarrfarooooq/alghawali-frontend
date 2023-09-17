@@ -39,7 +39,7 @@ const Main = () =>{
                         <ButtonEl bgColor="#253061" hoverBgColor="#1c2b4d" buttonTxt={t('section.buttonText')} px={8} py={2}/>
                     </Link>
                     </div>
-                    <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
+                    <div className="hidden lg:mt-0 lg:col-span-5 lg:flex justify-end">
                     <div className="elipse absolute shadow-2xl" style={elipseStyle}>
                     <img style={imageStyle} src={Image} alt="mockup" />
                     </div>
