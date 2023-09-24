@@ -36,7 +36,9 @@ const defaultTheme = createTheme();
 export default function SignIn() {
   const [fieldRequiredMsg, setFieldRequiredMsg] = React.useState(false); 
   const [incorrectCredentialsMsg, setIncorrectCredentialsMsg] = React.useState(false); 
-
+  // const navigate = useNavigate();
+  // const location = useLocation();
+  // const { from } = location.state || { from: { pathname: '/' } };
   const handleSubmit = async (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -63,7 +65,13 @@ export default function SignIn() {
         setFieldRequiredMsg(false);
         console.log('User logged in successfully');
         setIncorrectCredentialsMsg(false);
-        window.location.href = '/';
+        const prevPage = localStorage.getItem('prevPage');
+        if (prevPage) {
+          localStorage.removeItem('prevPage');
+          window.location.href = prevPage;
+        } else {
+          window.location.href = '/';
+        }
       } else if (response.status === 401) {
         setFieldRequiredMsg(false);
         setIncorrectCredentialsMsg(true);
@@ -100,7 +108,7 @@ export default function SignIn() {
             <Error message="All Fields Required"/>
           </div>
           <div  style={{display:`${incorrectCredentialsMsg? "block" : "none" }`}}>
-            <Error message="Incorrect Email or Password"/>
+            <Error message="Incorrect Phone.No or Password"/>
           </div>
           <TextField
             margin="normal"

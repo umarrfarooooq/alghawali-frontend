@@ -1,19 +1,23 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import YouTube from "react-youtube";
 import axios from "axios";
 import { useTranslation } from 'react-i18next';
+import { VerifyTokenFrontend } from "../../Authentication-components/verifyToken";
+import Loading from "../../Loading/Loading";
 const axiosInstense = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
 })
 const MaidDetailMainSection = (props) => {
+  const isAuthenticated = VerifyTokenFrontend();
   const { t } = useTranslation();
 
   const { maidID } = useParams();
   const [maidDetails, setMaidDetails] = useState(null);
   const [interviewPlanned, setInterviewPlanned] = useState(false);
   const [loading, setLoading] = useState(false)
-  
+  const navigate = useNavigate();
+  // const location = useLocation();
   useEffect(() => {
     const fetchMaidData = async () => {
       try {
@@ -30,26 +34,31 @@ const MaidDetailMainSection = (props) => {
   }, [maidID]);
 
   const handlePlanInterview = async () => {
-    
-    try {
-      const userPhoneNumber = localStorage.getItem("phonenoofuser");
-
-      const response = await axiosInstense.post(
-        "api/v1/interviews",
-        {
-          phoneNumber: userPhoneNumber,
-          maidId: maidDetails.code,
-        }
-      );
-
-      if (response.status === 201) {
-        setInterviewPlanned(true);
-      } else {
-        console.error("Error planning interview");
-      }
-    } catch (error) {
-      console.error("Error planning interview:", error);
+    if (!isAuthenticated) {
+      localStorage.setItem('prevPage', window.location.pathname);
+      navigate('/login');
+      return null;
     }
+      try {
+        const userPhoneNumber = localStorage.getItem("phonenoofuser");
+  
+        const response = await axiosInstense.post(
+          "api/v1/interviews",
+          {
+            phoneNumber: userPhoneNumber,
+            maidId: maidDetails.code,
+          }
+        );
+  
+        if (response.status === 201) {
+          setInterviewPlanned(true);
+        } else {
+          console.error("Error planning interview");
+        }
+      } catch (error) {
+        console.error("Error planning interview:", error);
+      }
+    
   };
 
   const handleDownloadCV = async () => {
@@ -58,7 +67,7 @@ const MaidDetailMainSection = (props) => {
       const maidID = maidDetails._id;
 
       const response = await axiosInstense.get(
-        `cv/${maidID}`,
+        `cv/pdf/${maidID}`,
         {
           responseType: "blob",
         }
@@ -93,7 +102,7 @@ const MaidDetailMainSection = (props) => {
 
   return (
     <>
-      {maidDetails && (
+      {maidDetails ? (
         <div className="maid-detail-main-section container my-8">
           {interviewPlanned && (
             <p className="ml-4 bg-green-700 rounded-lg text-white px-4 py-6">
@@ -134,7 +143,7 @@ const MaidDetailMainSection = (props) => {
             </div>
           </div>
         </div>
-      )}
+      ): <Loading />}
     </>
   );
 };

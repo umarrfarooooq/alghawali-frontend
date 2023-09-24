@@ -5,12 +5,13 @@ import i18n from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import HttpBackend from 'i18next-http-backend';
 import { useTranslation } from 'react-i18next';
-import { VerifyTokenFrontend } from "./components/Authentication-components/verifyToken";
+// import { VerifyTokenFrontend } from "./components/Authentication-components/verifyToken";
 import Loading from "./components/Loading/Loading";
+import MaidDetail from "./Pages/Maid-Detail"
+
 
 const Home = lazy(() => import('./Pages/Home'));
 const AllMaidsProfilePage = lazy(() => import('./Pages/All-Maids'));
-const MaidDetail = lazy(() => import('./Pages/Maid-Detail'));
 const AboutUs = lazy(() => import('./Pages/About-Us'));
 const ServicesPage = lazy(() => import('./Pages/Services-page'));
 const LoginPage = lazy(() => import('./Pages/Login'));
@@ -47,7 +48,7 @@ i18n
 
   
 function App() {
-  const isAuthenticated = VerifyTokenFrontend();
+  // const isAuthenticated = VerifyTokenFrontend();
   const { i18n } = useTranslation();
 
   useEffect(() => {
@@ -74,30 +75,30 @@ function App() {
 
   return (
     <Router>
-      <Suspense fallback={<div><Loading /></div>}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/all-profiles" element={<AllMaidsProfilePage />} />
-          <Route
-            path="/maid-detail/:maidID"
-            element={
-              isAuthenticated ? <MaidDetail /> : <Navigate to="/login" />
-            }
-          />
-          <Route path="/about" element={<AboutUs />} />
-          <Route path="/services" element={<ServicesPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/signup" element={<SignUpPage />} />
-          <Route path="/contact" element={<ContactUs />} />
-          <Route path="/blog" element={<BlogPage />} />
-          <Route path="/on-demand" element={<OnDemandPage />} />
-          <Route
-            path="/terms-conditions"
-            element={<TermsAndConditionsPage />}
-          />
-          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-        </Routes>
-      </Suspense>
+      <Routes>
+      <Route path="/" element={<Suspense fallback={<div><Loading /></div>}><Home /></Suspense>} />
+      <Route path="/all-profiles" element={<Suspense fallback={<div><Loading /></div>}><AllMaidsProfilePage /></Suspense>} />
+      {/* <Route
+        path="/maid-detail/:maidID"
+        element={
+          isAuthenticated ? <MaidDetail /> : <Navigate to="/login" />
+        }
+      /> */}
+      <Route path="/maid-detail/:maidID" element={<MaidDetail />} />
+      <Route path="/about" element={<Suspense fallback={<div><Loading /></div>}><AboutUs /></Suspense>} />
+      <Route path="/services" element={<Suspense fallback={<div><Loading /></div>}><ServicesPage /></Suspense>} />
+      <Route path="/login" element={<Suspense fallback={<div><Loading /></div>}><LoginPage /></Suspense>} />
+      <Route path="/signup" element={<Suspense fallback={<div><Loading /></div>}><SignUpPage /></Suspense>} />
+      <Route path="/contact" element={<Suspense fallback={<div><Loading /></div>}><ContactUs /></Suspense>} />
+      <Route path="/blog" element={<Suspense fallback={<div><Loading /></div>}><BlogPage /></Suspense>} />
+      <Route path="/on-demand" element={<Suspense fallback={<div><Loading /></div>}><OnDemandPage /></Suspense>} />
+      <Route
+        path="/terms-conditions"
+        element={<Suspense fallback={<div><Loading /></div>}><TermsAndConditionsPage /></Suspense>}
+      />
+      <Route path="/privacy-policy" element={<Suspense fallback={<div><Loading /></div>}><PrivacyPolicyPage /></Suspense>} />
+      <Route path="*" element={<Suspense fallback={<div><Loading /></div>}><Navigate to="/"/></Suspense>} />
+    </Routes>
     </Router>
   );
 }

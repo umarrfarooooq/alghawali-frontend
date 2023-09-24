@@ -5,7 +5,7 @@ import { VerifyTokenFrontend } from '../../Authentication-components/verifyToken
 import { useTranslation } from "react-i18next";
 import { Link } from 'react-router-dom';
 import "../../Header/Navbar.css"
-import backIcon from "./svg back.svg"
+import backIcon from "../../../assets/imgs/svg back.svg"
 import { Ripple, initTE } from "tw-elements";
 initTE({ Ripple });
 
@@ -20,7 +20,7 @@ function classNames(...classes) {
 export default function MaidDetailPageNavbar() {
   const { t } = useTranslation();
   const navigation = [];
-
+  
   if (isValid) {
     navigation.push({ name: t("navbar.menuItems.logout"), href: "/", current: true });
   } else {

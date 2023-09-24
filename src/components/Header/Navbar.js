@@ -7,6 +7,7 @@ import UpperHeader  from './UpperHeader';
 import logo from "./images/Group 2.svg"
 import "./Navbar.css"
 import { Ripple, initTE } from "tw-elements";
+// import { useEffect } from 'react';
 initTE({ Ripple });
 
 const isValid = VerifyTokenFrontend();
@@ -26,11 +27,17 @@ export default function Navbar() {
     { name: t("navbar.menuItems.contactUs"), href: "/contact", current: false },
   ];
   
-  if (isValid) {
-    navigation.push({ name: t("navbar.menuItems.logout"), href: "/", current: true });
-  } else {
-    navigation.push({ name: t("navbar.menuItems.login"), href: "/login", current: true });
-  }
+
+
+  navigation.push({name: isValid ? t("navbar.menuItems.logout") : t("navbar.menuItems.login"), href: isValid ? "/" : "/login", current:"true"})
+  
+
+    // if (isValid) {
+    //   navigation.push({ name: t("navbar.menuItems.logout"), href: "/", current: true });
+    // } else {
+    //   navigation.push({ name: t("navbar.menuItems.login"), href: "/login", current: true });
+    // }
+  
   const handleLogout = () => {
     localStorage.removeItem('authToken');
     localStorage.removeItem('phonenoofuser');
