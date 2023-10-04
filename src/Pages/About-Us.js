@@ -10,12 +10,18 @@ import Forth_Image from "../components/Services/images/forth.png"
 import Footer from "../components/Footer/Footer";
 import { Link } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
+import {Helmet} from "react-helmet";
 
 const AboutUs = () => {
     const { t } = useTranslation();
 
     return(
         <>
+            <Helmet>
+                <meta charSet="UTF-8" />
+                <meta name="description" content="Best Recruitment agency in Muscat-al ghawali" />
+                <title>Best Recruitment agency in Muscat-al ghawali</title>
+            </Helmet>
             <Navbar />
             <Breadcrumb url="/about" pageName="About Us"/>
             <AboutUsMain />

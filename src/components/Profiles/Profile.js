@@ -37,24 +37,22 @@ function Profile() {
   }, []);
 
   const updateNumberOfCards = () => {
-    if (window.innerWidth <= 770) {
+    if (window.innerWidth <= 540) {
       setNumberOfCards(1);
-    } else if (window.innerWidth <= 992) {
+    } else if (window.innerWidth <= 770) {
       setNumberOfCards(2);
-    } else {
+    }else if (window.innerWidth <= 992) {
       setNumberOfCards(3);
+    }else {
+      setNumberOfCards(4);
     }
   };
 
   return (
-    <div className="profileContainer my-12">
+    <div style={{background:"#E4FFF2"}} className="profileContainer overflow-x-hidden pb-12 py-4">
       <div className="container">
-        <div className="mb-6 lg:mb-8 flex items-center justify-between">
-          <h2 className="text-2xl sm:text-4xl tracking-tight bg-white font-extrabold  dark:text-white" style={{color:"#253061"}}>{t('profilesSection.title')}</h2>
-          <Link to="/all-profiles">
-            <ButtonEl bgColor="#253061" hoverBgColor="#1c2b4d" buttonTxt={t('profilesSection.buttonText')}/>
-          </Link>
-          
+        <div className="mb-6 lg:mb-8 py-8 text-center">
+          <h2 className="text-2xl sm:text-4xl tracking-tight font-extrabold " style={{color:"#253061"}}>{t('profilesSection.title')}</h2>
         </div>
         <div className="carousel-container" dir="ltr">
         <ItemsCarousel
@@ -73,14 +71,26 @@ function Profile() {
           activePosition={"center"}
           chevronWidth={24}
           rightChevron={
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M8.90997 19.92L15.43 13.4C16.2 12.63 16.2 11.37 15.43 10.6L8.90997 4.07996" stroke="black" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
+            
+            <div style={{boxShadow: "0px 8px 16px 0px rgba(1, 71, 38, 0.24)"}} className="bg-white p-4 xl:ml-12 rounded hidden md:block">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g id="arrow-right">
+              <path id="Vector" d="M5 12H19" stroke="#107243" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path id="Vector_2" d="M12 5L19 12L12 19" stroke="#107243" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
             </svg>
+            </div>
           }
           leftChevron={
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M15.09 19.92L8.57 13.4C7.8 12.63 7.8 11.37 8.57 10.6L15.09 4.07996" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+            <div style={{boxShadow: "0px 8px 16px 0px rgba(1, 71, 38, 0.24)"}} className="bg-white p-4 xl:ml-12 rounded hidden md:block">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g id="arrow-right">
+              <path id="Vector" d="M19 12H5" stroke="#107243" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path id="Vector_2" d="M12 5L5 12L12 19" stroke="#107243" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+              </svg>
+            </div>
+            
           }
           outsideChevron={false}
         >
@@ -88,6 +98,12 @@ function Profile() {
           <MaidProfiles key={index} data={maid} />
             ))}
         </ItemsCarousel>
+          <div className="text-center mt-8 py-8">
+              <Link to="/all-profiles">
+                <ButtonEl bgColor="#107243" hoverBgColor="#107243" px={12} buttonTxt={t('profilesSection.buttonText')}/>
+              </Link>
+          </div>
+            
         </div>
         
       </div>

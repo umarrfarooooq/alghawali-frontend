@@ -1,9 +1,28 @@
 .navBar{
     background: #253061;
 }
-.navItemTxt{
-    color:#253061 ;
+.signupItemTxt{
+    color:#28BB76;
+    padding-inline: 1.12rem !important;
+    border: 1px solid #28BB76;
 }
+.signupItemTxt:hover{
+  background-color: white;
+  border: 1px solid #fff;
+
+}
+.loginItemTxt{
+    color:#fff;
+    border: 1px solid #28BB76;
+    padding-inline: 1.12rem !important;
+    background-color: #28BB76;
+}
+.loginItemTxt:hover{
+    color: #fff;
+    background-color: blue;
+    border: 1px solid blue;
+}
+
 .upperHeader{
   background: #EDF1FC;color: #000B41;
   font-size: 1rem;
@@ -22,5 +41,45 @@ className:after {
   
   className:hover:after {
     width: 100%;
+  }
+  select {
+    -webkit-appearance: none; /* for Chrome and Safari */
+    -moz-appearance: none; /* for Firefox */
+    appearance: none; /* for other browsers */
+  }
+  option{
+    color: black;
+  }
+  .scale-up-hor-right {
+    -webkit-animation: scale-up-hor-right 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+            animation: scale-up-hor-right 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  }
+  @-webkit-keyframes scale-up-hor-right {
+    0% {
+      -webkit-transform: scaleX(0.4);
+              transform: scaleX(0.4);
+      -webkit-transform-origin: 100% 100%;
+              transform-origin: 100% 100%;
+    }
+    100% {
+      -webkit-transform: scaleX(1);
+              transform: scaleX(1);
+      -webkit-transform-origin: 100% 100%;
+              transform-origin: 100% 100%;
+    }
+  }
+  @keyframes scale-up-hor-right {
+    0% {
+      -webkit-transform: scaleX(0.4);
+              transform: scaleX(0.4);
+      -webkit-transform-origin: 100% 100%;
+              transform-origin: 100% 100%;
+    }
+    100% {
+      -webkit-transform: scaleX(1);
+              transform: scaleX(1);
+      -webkit-transform-origin: 100% 100%;
+              transform-origin: 100% 100%;
+    }
   }
   

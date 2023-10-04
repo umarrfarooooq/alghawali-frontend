@@ -1,13 +1,15 @@
 import { Disclosure} from '@headlessui/react'
-import { MenuIcon as Bars3Icon, XIcon as XMarkIcon } from '@heroicons/react/outline';
+import { XIcon as XMarkIcon } from '@heroicons/react/outline';
 import { Link } from 'react-router-dom';
-import { useTranslation } from "react-i18next"; // Import the useTranslation hook
+import { useTranslation } from "react-i18next";
 import { VerifyTokenFrontend } from '../Authentication-components/verifyToken';
-import UpperHeader  from './UpperHeader';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons';
+
 import logo from "./images/Group 2.svg"
+import navOpen from "./images/tornado.svg"
 import "./Navbar.css"
 import { Ripple, initTE } from "tw-elements";
-// import { useEffect } from 'react';
 initTE({ Ripple });
 
 const isValid = VerifyTokenFrontend();
@@ -18,25 +20,33 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 export default function Navbar() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
+  const handleLanguageChange = (e) => {
+    const selectedLanguage = e.target.value;
+    i18n.changeLanguage(selectedLanguage);
+  };
+
+
   const navigation = [
     { name: t("navbar.menuItems.home"), href: "/", current: false },
     { name: t("navbar.menuItems.aboutUs"), href: "/about", current: false },
     { name: t("navbar.menuItems.services"), href: "/services", current: false },
     { name: t("navbar.menuItems.blog"), href: "/blog", current: false },
-    { name: t("navbar.menuItems.contactUs"), href: "/contact", current: false },
+  ];
+  const rightNavigation = [
+    { name: "English", icon: "downArrow", href: "", current: false, dropDown: true }
   ];
   
-
-
-  navigation.push({name: isValid ? t("navbar.menuItems.logout") : t("navbar.menuItems.login"), href: isValid ? "/" : "/login", current:"true"})
+  if (isValid) {
+    rightNavigation.push({ name: t("navbar.menuItems.logout"), href: "/", loginBtn: true });
+  } else {
+    rightNavigation.push(
+      { name: t("navbar.menuItems.signup"), href: "/signup", signupBtn: true },
+      { name: t("navbar.menuItems.login"), href: "/login", loginBtn: true }
+    );
+  }
   
-
-    // if (isValid) {
-    //   navigation.push({ name: t("navbar.menuItems.logout"), href: "/", current: true });
-    // } else {
-    //   navigation.push({ name: t("navbar.menuItems.login"), href: "/login", current: true });
-    // }
   
   const handleLogout = () => {
     localStorage.removeItem('authToken');
@@ -46,7 +56,6 @@ export default function Navbar() {
   };
   return (
     <>
-      <UpperHeader />
       <div className="min-h-full">
         <Disclosure as="nav" className="navBar py-3">
           {({ open }) => (
@@ -64,7 +73,7 @@ export default function Navbar() {
                     </Link>
                       
                     </div>
-                    <div className="hidden md:block">
+                    <div className="hidden lg:block">
                       <div className="navitemsrtl ml-10 flex items-baseline space-x-1">
                         {navigation.map((item) => (
                           <Link
@@ -82,43 +91,128 @@ export default function Navbar() {
                         ))}
                       </div>
                     </div>
+                    <div className="hidden lg:block">
+                      <div className="navitemsrtl ml-10 flex items-baseline space-x-1">
+                      {rightNavigation.map((item) => (
+                      <div key={item.name} className="relative inline-block">
+                        <Link
+                          to={item.href}
+                          onClick={item.name === t("navbar.menuItems.logout") ? handleLogout : undefined}
+                          className={classNames(
+                            item.signupBtn ? 'signupItemTxt transition-all py-3 px-8' : item.loginBtn ? 'loginItemTxt transition-all py-3 px-8' : 'text-gray-300 hover:text-white',
+                            'rounded-md px-4 py-2 text-sm font-medium transition-all mx-2'
+                          )}
+                          aria-current={item.current ? 'page' : undefined}
+                        >
+                          <span className=''>{item.dropDown && <select className='bg-transparent outline-none mr-2' onChange={handleLanguageChange}
+                            value={i18n.language}>
+                              <option value="en">{t('upperHeader.language.english')}</option>
+                              <option value="ar">{t('upperHeader.language.arabic')}</option>
+                            </select>}
+                            </span>
+                          <span className=''>{item.name !== "English" ? item.name : ""}</span>
+                          {item.icon === 'downArrow' && <FontAwesomeIcon icon={faAngleDoubleDown} />}
+                        </Link>
+                      </div>
+                      ))}
+
+
+                      </div>
+                    </div>
                   </div>
                   
-                  <div className="-mr-2 flex md:hidden">
+                  <div className="-mr-2 flex lg:hidden">
                     {/* Mobile menu button */}
-                    <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                    <Disclosure.Button className="relative inline-flex items-center justify-center  p-2 text-gray-400 hover:text-white focus:outline-none focus:ring-offset-2">
                       <span className="absolute -inset-0.5" />
                       <span className="sr-only">Open main menu</span>
                       {open ? (
-                        <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
+                        <div>
+                          <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
+                        </div>
+                        
                       ) : (
-                        <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+                        <div>
+                        <span className='navIcon block h-6 w-6'><img src={navOpen} alt='Navbar Icon'></img></span>
+                        {/* <Bars3Icon className="block h-6 w-6" aria-hidden="true" /> */}
+                        </div>
+
                       )}
                     </Disclosure.Button>
                   </div>
                 </div>
               </div>
 
-              <Disclosure.Panel className="md:hidden">
-                <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
-                  {navigation.map((item) => (
-                    <Link
-                        key={item.name}
-                        to={item.href}
-                        style={{textDecoration:"none"}}
-                        className={classNames(
-                          item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                          'block rounded-md px-3 py-2 text-base font-medium'
-                        )}
-                        aria-current={item.current ? 'page' : undefined}
-                      >
-                      {item.name}
-                    </Link>
-                    
-                  ))}
+              <Disclosure.Panel
+               className="scale-up-hor-right lg:hidden fixed overflow-x-hidden z-50 top-0 right-0 w-full h-screen" style={{background:"#F2F5FF"}}>
+                <div className="h-full flex flex-col justify-start container">
+                <Disclosure.Button className="relative inline-flex items-center justify-end mt-4  p-2 text-gray-600 hover:text-gray-700 focus:outline-none focus:ring-offset-2">
+                      <span className="absolute -inset-0.5" />
+                      <span className="sr-only">Open main menu</span>
+                      {open ? (
+                        <div>
+                          <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
+                        </div>
+                        
+                      ) : (
+                        <div>
+                        <span className='navIcon block h-6 w-6'><img src={navOpen} alt='Navbar Icon'></img></span>
+                        {/* <Bars3Icon className="block h-6 w-6" aria-hidden="true" /> */}
+                        </div>
+
+                      )}
+                    </Disclosure.Button>
+                  <nav className="space-y-4 text-start">
+                    {navigation.map((item) => (
+                      <div className='container' style={{borderBottom:".12px solid lightgrey"}}>
+                        <Link
+                          key={item.name}
+                          to={item.href}
+                          style={{ textDecoration: "none" }}
+                          className={classNames(
+                            item.current
+                              ? "bg-gray-900 text-white"
+                              : "text-gray-600 hover:bg-gray-100 hover:text-gray-900",
+                            "block py-4 px-2 text-xl font-medium"
+                          )}
+                          aria-current={item.current ? "page" : undefined}
+                        >
+                          {item.name}
+                        </Link>
+                      </div>
+                      
+                    ))}
+                    {rightNavigation.map((item) => (
+                      <div className='container' style={{borderBottom:".12px solid lightgrey"}}>
+                        <Link
+                          key={item.name}
+                          to={item.href}
+                          onClick={item.name === t("navbar.menuItems.logout") ? handleLogout : undefined}
+                          style={{ textDecoration: "none" }}
+                          className={classNames(
+                            item.current
+                              ? "bg-gray-900 text-white"
+                              : "text-gray-600 hover:bg-gray-100 hover:text-gray-900",
+                            "block py-4 px-2 text-xl font-medium"
+                          )}
+                          aria-current={item.current ? "page" : undefined}
+                        >
+                          <span className=''>{item.dropDown && <select className='bg-transparent outline-none mr-2' onChange={handleLanguageChange}
+                            value={i18n.language}>
+                              <option value="en">{t('upperHeader.language.english')}</option>
+                              <option value="ar">{t('upperHeader.language.arabic')}</option>
+                            </select>}
+                            </span>
+                          <span className=''>{item.name !== "English" ? item.name : ""}</span>
+                          {item.icon === 'downArrow' && <FontAwesomeIcon icon={faAngleDoubleDown} />}
+                        </Link>
+                      </div>
+                      
+                    ))}
+                  </nav>
                 </div>
-                
-              </Disclosure.Panel>
+            </Disclosure.Panel>
+
             </>
           )}
         </Disclosure>

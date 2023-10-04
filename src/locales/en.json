@@ -17,7 +17,8 @@
           "blog": "Blog",
           "contactUs": "Contact Us",
           "logout": "Logout",
-          "login": "Login"
+          "login": "Login",
+          "signup":"Sign Up"
         },
         "logoAltText": "Your Company"
       },
@@ -25,18 +26,27 @@
         "subtitle": "Providing the best",
         "title1": "MANPOWER",
         "title2": "SOLUTIONS",
-        "subtitle2": "All Across OMAN",
+        "subtitle2": "all across",
+        "subtitle3": "OMAN",
         "description": "Al Ghawali Manpower Supply excels in delivering proficient housemaids, experienced waitresses, and more, catering to diverse staffing needs across Oman with unmatched reliability and professionalism.",
         "buttonText": "Contact Us"
       },
       "services": {
-        "sectionTitle": "Services",
+        "sectionTitle": "Services we Offer",
         "seeAllButton": "See All",
         "categories": {
             "fCatNam":"House Maids",
             "sCatNam":"Barista",
             "tCatNam":"Waitress",
-            "forthCatNam":"Nurses"
+            "forthCatNam":"Nurses",
+            "fifthCatNam": "Driver"
+        },
+        "descriptions":{
+          "housemaids_description": "Experience personalized and professional services with our team of housemaids.",
+          "baristas_description": "Experience personalized and professional services with our team of baristas.",
+          "nurses_description": "Experience personalized and professional services with our expert team of nurses.",
+          "waitresses_description": "Experience personalized and professional services with our team of waitresses.",
+          "driver_description": "Experience personalized and professional services with our team of drivers."
         },
         "showProfileBtn":"Show Profiles"
       },

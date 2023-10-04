@@ -28,6 +28,18 @@ body{
 .contactUsForm input, .contactUsForm textarea, .contactUsForm select{
     padding: 1rem 1rem 1rem 8rem !important;
 }
+.rtlNeedH{
+    border-top-right-radius: 0% !important;
+    border-top-left-radius: .5rem;
+    border-bottom-right-radius: 0% !important;
+    border-bottom-left-radius: .5rem;
+}
+.rtlNeedHInput{
+    border-top-left-radius: 0% !important;
+    border-top-right-radius: .5rem;
+    border-bottom-left-radius: 0% !important;
+    border-bottom-right-radius: .5rem;
+}
 .searchInput {
     padding-right: 1rem;
 }

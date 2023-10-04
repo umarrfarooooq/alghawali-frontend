@@ -1,4 +1,10 @@
 a{
     text-decoration: none !important;
-    color: black;
+}
+.footerItems a{
+    color: rgb(221, 221, 221);
+    transition: .25s all;
+}
+.footerItems a:hover{
+    color: white;
 }

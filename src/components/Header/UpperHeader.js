@@ -29,7 +29,7 @@ const UpperHeader = () => {
           </div>
           <div className="mb-2">
             <FontAwesomeIcon icon={faEnvelope} className="mr-1" />
-            <span>support@alghawalimanpower.com</span>
+            <span>info@alghawalimanpower.com</span>
           </div>
           <div className="mb-2">
             <FontAwesomeIcon icon={faPhone} className="mr-1" />

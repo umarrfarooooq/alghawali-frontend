@@ -15,7 +15,7 @@ const MaidDetailMainSection = (props) => {
   const { maidID } = useParams();
   const [maidDetails, setMaidDetails] = useState(null);
   const [interviewPlanned, setInterviewPlanned] = useState(false);
-  const [loading, setLoading] = useState(false)
+  // const [loading, setLoading] = useState(false)
   const navigate = useNavigate();
   // const location = useLocation();
   useEffect(() => {
@@ -61,37 +61,37 @@ const MaidDetailMainSection = (props) => {
     
   };
 
-  const handleDownloadCV = async () => {
-    setLoading(true);
-    try {
-      const maidID = maidDetails._id;
+  // const handleDownloadCV = async () => {
+  //   setLoading(true);
+  //   try {
+  //     const maidID = maidDetails._id;
 
-      const response = await axiosInstense.get(
-        `cv/pdf/${maidID}`,
-        {
-          responseType: "blob",
-        }
-      );
+  //     const response = await axiosInstense.get(
+  //       `cv/pdf/${maidID}`,
+  //       {
+  //         responseType: "blob",
+  //       }
+  //     );
 
-      const blob = new Blob([response.data], { type: "application/pdf" });
-      const url = window.URL.createObjectURL(blob);
+  //     const blob = new Blob([response.data], { type: "application/pdf" });
+  //     const url = window.URL.createObjectURL(blob);
 
-      const a = document.createElement("a");
-      a.style.display = "none";
-      a.href = url;
-      a.download = `maid_${maidID}_cv.pdf`;
+  //     const a = document.createElement("a");
+  //     a.style.display = "none";
+  //     a.href = url;
+  //     a.download = `maid_${maidID}_cv.pdf`;
 
-      document.body.appendChild(a);
-      a.click();
+  //     document.body.appendChild(a);
+  //     a.click();
 
-      window.URL.revokeObjectURL(url);
-      setLoading(false);
+  //     window.URL.revokeObjectURL(url);
+  //     setLoading(false);
 
-    } catch (error) {
-      console.error("Error downloading CV:", error);
-    }
-  };
-  // const videoId = "ycAyrekLBvE";
+  //   } catch (error) {
+  //     console.error("Error downloading CV:", error);
+  //   }
+  // };
+
   const opts = {
     height: "300",
     width: "100%",
@@ -99,6 +99,21 @@ const MaidDetailMainSection = (props) => {
       autoplay: 0,
     },
   };
+  const extractYouTubeVideoId = (url) => {
+    // Check if the URL is a YouTube Shorts URL
+    const shortsMatch = url.match(/youtube\.com\/shorts\/([^\n?#]+)/);
+    if (shortsMatch) {
+      return shortsMatch[1] || null;
+    }
+  
+    // Check for standard YouTube video URLs
+    const match = url.match(/youtu(?:\.be\/|be\.com\/watch\?v=)([^\n?#]+)/);
+    return (match && match[1]) || null;
+  };
+  
+  
+
+
 
   return (
     <>
@@ -109,28 +124,40 @@ const MaidDetailMainSection = (props) => {
             {t('maidDetail.interviewSuccessMessage')}
             </p>
           )}
+          
           <p className="mx-3">
           {t('maidDetail.codeLabel')}<span className="text-blue-700 text-xl mb-4"> {maidDetails.code}</span>
           </p>
           <div className="flex flex-col md:flex-row items-start gap-x-6 justify-between container">
             <div className="leftSection w-full">
-              <YouTube videoId={maidDetails.videoLink} opts={opts} className="rounded-lg overflow-hidden shadow-md" />
+            <YouTube videoId={extractYouTubeVideoId(maidDetails.videoLink)} opts={opts} className="rounded-lg overflow-hidden shadow-md" />
+            {console.log(extractYouTubeVideoId(maidDetails.videoLink))}
+            {console.log(maidDetails.videoLink)}
             </div>
             <div className="rightSection w-full md:ml-8 md:mt-0 mt-8 ml-0">
               <h2 className="font-semibold text-4xl mb-3">{maidDetails.name}</h2>
               <p className="mb-3">{t('maidDetail.nationalityLabel')} <span>{maidDetails.nationality}</span></p>
               <p className="mb-3">{t('maidDetail.ageLabel')} <span>{maidDetails.age} </span>Years</p>
               <p className="mb-3">{t('maidDetail.salaryLabel')} <span>{maidDetails.salery} </span>OMR </p>
-              {loading && <p>Downloading...</p>}
+              {/* {loading && <p>Downloading...</p>} */}
 
               <div className="flex items-center gap-4 mt-8">
+              <a href={`${process.env.REACT_APP_API_URL}cv/pdf/${maidID}`}>
                 <button
+                    style={{ background: "#253061" }}
+                    className="py-2 text-white rounded-md px-6"
+                  >
+                    {t('maidDetail.downloadCVButton')}
+                  </button>
+              </a>
+                
+                {/* <button
                   style={{ background: "#253061" }}
                   className="py-2 text-white rounded-md px-6"
                   onClick={handleDownloadCV}
                 >
                   {t('maidDetail.downloadCVButton')}
-                </button>
+                </button> */}
                 <button
                   style={{ background: "#249D64" }}
                   className="py-2 text-white rounded-md px-6"
@@ -138,6 +165,7 @@ const MaidDetailMainSection = (props) => {
                   disabled={interviewPlanned}
                 >
                   {t('maidDetail.planInterviewButton')}
+                  
                 </button>
               </div>
             </div>

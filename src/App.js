@@ -78,12 +78,6 @@ function App() {
       <Routes>
       <Route path="/" element={<Suspense fallback={<div><Loading /></div>}><Home /></Suspense>} />
       <Route path="/all-profiles" element={<Suspense fallback={<div><Loading /></div>}><AllMaidsProfilePage /></Suspense>} />
-      {/* <Route
-        path="/maid-detail/:maidID"
-        element={
-          isAuthenticated ? <MaidDetail /> : <Navigate to="/login" />
-        }
-      /> */}
       <Route path="/maid-detail/:maidID" element={<MaidDetail />} />
       <Route path="/about" element={<Suspense fallback={<div><Loading /></div>}><AboutUs /></Suspense>} />
       <Route path="/services" element={<Suspense fallback={<div><Loading /></div>}><ServicesPage /></Suspense>} />

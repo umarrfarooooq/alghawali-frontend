@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ItemsCarousel from "react-items-carousel";
 import Testimonial from "./Testimonial";
-import "./Testimonials.css"
+import './Testimonials.css';
 import range from "lodash/range";
 import TestimonialData from "./testimonials.json"
 import { useTranslation } from 'react-i18next';
@@ -15,16 +15,14 @@ const Testimonials = ()=> {
 
     useEffect(() => {
       setTimeout(() => {
-        setChildren(createChildren(4));
+        setChildren(createChildren(6));
       }, 100);
     }, []);
   
   
     const createChildren = (n) =>
       range(n).map((i) => (
-        <div className={`flex items-center bg-white justify-between py-8 px-4 text-sm
-        ${TestimonialData[i].even && 'evenBg'}
-        `} key={i} style={{ height: "15rem", width:"100%" }}>
+        <div className={`flex items-center bg-white justify-between py-8 px-4 text-sm rounded-2xl`} key={i} style={{ height: "16rem", border: "2px solid rgba(3, 29, 146, 0.08)" }}>
           <div className="testimonials flex flex-col items-start">
             <Testimonial testimonial = {TestimonialData[i]}/>
           </div>
@@ -35,7 +33,7 @@ const Testimonials = ()=> {
       setActiveItemIndex(activeItemIndex);
   
       useEffect(() => {
-          setChildren(createChildren(5));
+          setChildren(createChildren(6));
           updateNumberOfCards();
       
           window.addEventListener("resize", updateNumberOfCards);
@@ -47,18 +45,20 @@ const Testimonials = ()=> {
         const updateNumberOfCards = () => {
           if (window.innerWidth <= 770) {
             setNumberOfCards(1);
-          }else {
+          }else if (window.innerWidth <= 992) {
             setNumberOfCards(2);
+          }else {
+            setNumberOfCards(3);
           }
         };
   
     return (
-      <div className="testimonialsContainer my-12 py-12">
+      <div className="testimonialsContainer overflow-hidden pt-12 py-12 pb-28">
           <div className="container">
-          <div className="mb-6 lg:mb-8 flex items-center justify-between">
-              <h2 className=" text-4xl tracking-tight font-extrabold  dark:text-white" style={{color:"#fff"}}>{t('testimonials.title')}</h2>
+          <div className="mb-6 lg:mb-8 text-center">
+              <h2 className="text-xl sm:text-2xl md:text-3xl tracking-tight font-extrabold" style={{color:"#1A1A1A"}}>{t('testimonials.title')}</h2>
           </div>
-          <div className="carousel-container" dir="ltr">
+          <div  className={`carousel-container testimonialCont`} dir="ltr">
             <ItemsCarousel
                 enablePlaceholder
                 numberOfPlaceholderItems={4}
@@ -80,14 +80,23 @@ const Testimonials = ()=> {
                 activePosition={"center"}
                 chevronWidth={24}
                 rightChevron={
+                    <div style={{backgroundColor:"#107243"}} className={`rightChev p-3 ml-4 absolute -bottom-20 rounded-lg`}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path d="M8.90997 19.92L15.43 13.4C16.2 12.63 16.2 11.37 15.43 10.6L8.90997 4.07996" stroke="black" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
+                    <path d="M5 12H19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 5L19 12L12 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  </div>
+                  
+                    
                 }
                 leftChevron={
+                  <div style={{backgroundColor:"#107243"}} className={`leftChev p-3 mr-4 absolute -bottom-20 rounded-lg`}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path d="M15.09 19.92L8.57 13.4C7.8 12.63 7.8 11.37 8.57 10.6L15.09 4.07996" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+                    <path d="M19 12H5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 5L5 12L12 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  </div>
+                    
                 }
                 outsideChevron={false}
             >

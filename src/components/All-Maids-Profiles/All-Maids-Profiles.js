@@ -36,7 +36,7 @@ const AllMaidsProfiles = ({ searchTerm }) => {
     <>
     <div
       className="allprofilesmaid space-y-4 md:grid md:grid-cols-1 lg:grid-cols-2 md:gap-8 md:space-y-0"
-      style={{ height: 200, width: "70%" }}
+      style={{ width: "70%" }}
     >
       {currentItems.map((maid, index) => (
         <MaidProfiles key={index} data={maid} />
