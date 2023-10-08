@@ -1,7 +1,86 @@
-import React from "react";
+// import React from "react";
 // import { useTranslation } from 'react-i18next';
+import React, { useState, useEffect, useRef } from "react";
 
+// A custom hook that returns true if the element is visible on the screen
+const useIsVisible = (ref) => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    // Create an observer that will fire a callback when the element is intersecting the viewport
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // Update the state with the visibility status
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.1 } // The percentage of the element's area that needs to be visible to trigger the callback
+    );
+
+    // Observe the ref element if it exists
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    // Clean up the observer when the component unmounts or the ref changes
+    return () => {
+      observer.disconnect();
+    };
+  }, [ref]);
+
+  return isVisible;
+};
 const AboutCompany = ()=>{
+
+  const [count, setCount] = useState(1);
+  const targetCount = 2177;
+
+  // Create a ref for the counter element
+  const counterRef = useRef(null);
+
+  // Use the custom hook to get the visibility status
+  const isVisible = useIsVisible(counterRef);
+
+  useEffect(() => {
+    // Only run the effect if the component is visible
+    if (isVisible) {
+      const interval = setInterval(() => {
+        if (count < targetCount) {
+          setCount(count + 1);
+        }
+      }, 0.0125);
+
+      return () => {
+        clearInterval(interval);
+      };
+    }
+  }, [count, targetCount, isVisible]);
+
+
+  const [secCount, setSecCountCount] = useState(1);
+  const targetCountSec = 3200;
+
+  // Create a ref for the counter element
+  // const counterRefSec = useRef(null);
+
+  // Use the custom hook to get the visibility status
+  const isVisibleSec = useIsVisible(counterRef);
+
+  useEffect(() => {
+    // Only run the effect if the component is visible
+    if (isVisibleSec) {
+      const interval = setInterval(() => {
+        if (secCount < targetCountSec) {
+          setSecCountCount(secCount + 1);
+        }
+      }, 0.0125);
+
+      return () => {
+        clearInterval(interval);
+      };
+    }
+  }, [secCount, targetCountSec, isVisibleSec]);
+
+
     // const { t } = useTranslation();
     return (
         <div  style={{backgroundColor:"#F2F5FF"}}>
@@ -50,7 +129,7 @@ const AboutCompany = ()=>{
 
                 </div>
 
-                <h3 className="mt-6">7 + </h3>
+                <h3 className="mt-6">4 + </h3>
                 <p className="my-4 mb-0 font-normal leading-relaxed tracking-wide">
                 Year of Experience</p>
               </div>
@@ -93,7 +172,7 @@ const AboutCompany = ()=>{
   </defs>
 </svg>
                 </div>
-                <h3 className="mt-6">30228</h3>
+                <h3 className="mt-6" ref={counterRef}>{secCount}</h3>
                 <p className="my-4 mb-0 font-normal leading-relaxed tracking-wide">
                 House Maids</p>
               </div>
@@ -126,9 +205,10 @@ const AboutCompany = ()=>{
   </defs>
 </svg>
                 </div>
-                <h3 className="mt-6">30228</h3>
+                <h3 className="mt-6" ref={counterRef}>{count}</h3>
                 <p className="my-4 mb-0 font-normal leading-relaxed tracking-wide">
-                Clients</p>
+                  Clients
+                </p>
               </div>
 
 

@@ -1,13 +1,13 @@
 import React from "react";
 // import commaSvg from "./img/comma.svg"
-import firstClient from "./img/first.svg"
+import Client from "./img/avatar.svg"
 import star from "./img/Star.svg"
 const Testimonial = (props)=>{
     return(
         <>
         <div className="flex items-center justify-center flex-col" style={{direction:"rtl"}}>
             <div>
-                <img src={firstClient} alt="testimonialPic"/>
+                <img className="w-[3.5rem] h-[3.5rem]" src={Client} alt="testimonialPic"/>
               </div>
             {/* <div className="testimonialBox">
               <img src={commaSvg} alt="comma"/>

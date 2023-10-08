@@ -58,7 +58,7 @@ function Profile() {
         <ItemsCarousel
           
           enablePlaceholder
-          numberOfPlaceholderItems={5}
+          numberOfPlaceholderItems={6}
           minimumPlaceholderTime={1000}
           placeholderItem={<div style={{ height: 200, background: "blue" }}>Placeholder</div>}
           numberOfCards={numberOfCards}
@@ -94,7 +94,7 @@ function Profile() {
           }
           outsideChevron={false}
         >
-          {maids.slice(0, 5).map((maid, index) => (
+          {maids.slice(0,5).map((maid, index) => (
           <MaidProfiles key={index} data={maid} />
             ))}
         </ItemsCarousel>

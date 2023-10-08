@@ -25,7 +25,7 @@ const MaidProfiles = (props) =>{
                         <p style={{color:"#9E9E9E"}} className="font-normal text-xs">Religion <p style={{color:"#5F5F5F"}} className="font-semibold text-sm">{religion}</p></p>
                     </div>
                     <div className="salery">
-                        <p style={{color:"#9E9E9E"}} className="font-normal text-xs">Salery <p style={{color:"#5F5F5F"}} className="font-semibold text-sm">{salery}</p></p>
+                        <p style={{color:"#9E9E9E"}} className="font-normal text-xs">Salary <p style={{color:"#5F5F5F"}} className="font-semibold text-sm">{salery}</p></p>
                     </div>
                     <div className="country">
                         <p style={{color:"#9E9E9E"}} className="font-normal text-xs">Country <p style={{color:"#5F5F5F"}} className="font-semibold text-sm">{nationality}</p></p>
