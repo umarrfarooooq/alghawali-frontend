@@ -16,7 +16,7 @@ const ServiceCard = (props) =>{
     return(
         <>
             <div style={{backgroundColor:"#F5F6FC", height}} className=" rounded-lg relative overflow-hidden p-2">
-                <img loading="lazy" className="w-full rounded-md max-h-[8rem] sm:max-h-[12rem]" style={{ width:"100%", height:"100%", objectFit:"cover", objectPosition:"top"}} src={props.image} alt="Service Detail" />
+                <img loading="lazy" className="w-full rounded-md max-h-[8rem] sm:max-h-[12rem]" style={{ width:"100%", height:"100%", objectFit:"cover", objectPosition:"top"}} src={props.image} alt={props.imageAlt || "Service Detail"} />
                 <div className="service-detail mt-2 md:text-center">
                     <h3 className="text-xs sm:text-xl" style={{color:"#1A1A1A"}}>
                     {props.catName}

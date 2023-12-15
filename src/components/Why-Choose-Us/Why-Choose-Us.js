@@ -52,7 +52,7 @@ const WhyChooseUs = ()=>{
                 </div>
 
                 <h3 className="mt-6">{t('chooseUsSection.features.feature1.title')}</h3>
-                <p className="my-4 mb-0 font-normal leading-relaxed tracking-wide">
+                <p className="my-4 text-justify mb-0 font-normal leading-relaxed tracking-wide">
                 {t('chooseUsSection.features.feature1.detail')}                </p>
               </div>
     
@@ -90,7 +90,7 @@ const WhyChooseUs = ()=>{
                   </div>
                 </div>
                 <h3 className="mt-6">{t('chooseUsSection.features.feature2.title')}</h3>
-                <p className="my-4 mb-0 font-normal leading-relaxed tracking-wide">
+                <p className="my-4 text-justify mb-0 font-normal leading-relaxed tracking-wide">
                 {t('chooseUsSection.features.feature2.detail')}                </p>
               </div>
     
@@ -115,7 +115,7 @@ const WhyChooseUs = ()=>{
                   </div>
               </div>
                 <h3 className="mt-6">{t('chooseUsSection.features.feature3.title')}</h3>
-                <p className="my-4 mb-0 font-normal leading-relaxed tracking-wide">
+                <p className="my-4 text-justify mb-0 font-normal leading-relaxed tracking-wide">
                 {t('chooseUsSection.features.feature3.detail')}                </p>
               </div>
             </div>

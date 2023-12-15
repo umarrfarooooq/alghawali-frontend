@@ -14,7 +14,7 @@ const MaidProfiles = (props) =>{
     
         <>
             <div dir="ltr" style={{backgroundColor:"#F5F6FC", boxShadow:"0px 16px 24px 0px rgba(7, 42, 91, 0.12)"}} className="rounded-lg relative overflow-hidden p-2" key={props.i}>
-                <img loading="lazy" className="w-full rounded-md" style={{backgroundPosition:"center",backgroundSize:"cover", maxHeight,height:"auto",  objectFit:"cover", objectPosition:"top"}} src={`https://res.cloudinary.com/dtcz2zuev/image/upload/${maidImg}`} alt="Service Detail" />
+                <img loading="lazy" className="w-full rounded-md" style={{backgroundPosition:"center",backgroundSize:"cover", maxHeight,height:"auto",  objectFit:"cover", objectPosition:"top"}} src={`https://res.cloudinary.com/dtcz2zuev/image/upload/w_500,q_auto/${maidImg}`} alt="Service Detail" />
                 <div className="service-detail mt-2">
                     <h3 className="text-base sm:text-xl" style={{color:"#1A1A1A"}}>{name}</h3>
                     <div style={{fontSize:"0.625rem", color:"#5F5F5F"}} className="maidDetailSection sm:text-lg grid grid-cols-2">

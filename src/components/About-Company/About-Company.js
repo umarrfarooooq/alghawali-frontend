@@ -2,26 +2,21 @@
 // import { useTranslation } from 'react-i18next';
 import React, { useState, useEffect, useRef } from "react";
 
-// A custom hook that returns true if the element is visible on the screen
 const useIsVisible = (ref) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Create an observer that will fire a callback when the element is intersecting the viewport
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Update the state with the visibility status
         setIsVisible(entry.isIntersecting);
       },
-      { threshold: 0.1 } // The percentage of the element's area that needs to be visible to trigger the callback
-    );
+      { threshold: 0.1 }
+          );
 
-    // Observe the ref element if it exists
     if (ref.current) {
       observer.observe(ref.current);
     }
 
-    // Clean up the observer when the component unmounts or the ref changes
     return () => {
       observer.disconnect();
     };
@@ -129,9 +124,10 @@ const AboutCompany = ()=>{
 
                 </div>
 
-                <h3 className="mt-6">4 + </h3>
+                <h3 className="mt-6 text-3xl">4 + </h3>
                 <p className="my-4 mb-0 font-normal leading-relaxed tracking-wide">
-                Year of Experience</p>
+                Year of Experience
+                </p>
               </div>
     
               {/* housemaid count */}
@@ -172,7 +168,7 @@ const AboutCompany = ()=>{
   </defs>
 </svg>
                 </div>
-                <h3 className="mt-6" ref={counterRef}>{secCount}</h3>
+                <h3 className="mt-6 text-3xl" ref={counterRef}>{secCount}</h3>
                 <p className="my-4 mb-0 font-normal leading-relaxed tracking-wide">
                 House Maids</p>
               </div>
@@ -205,7 +201,7 @@ const AboutCompany = ()=>{
   </defs>
 </svg>
                 </div>
-                <h3 className="mt-6" ref={counterRef}>{count}</h3>
+                <h3 className="mt-6 text-3xl" ref={counterRef}>{count}</h3>
                 <p className="my-4 mb-0 font-normal leading-relaxed tracking-wide">
                   Clients
                 </p>
@@ -225,7 +221,7 @@ const AboutCompany = ()=>{
                 </defs>
                 </svg>
                 </div>
-                <h3 className="mt-6">24Hrs</h3>
+                <h3 className="mt-6 text-3xl">24Hrs</h3>
                 <p className="my-4 mb-0 font-normal leading-relaxed tracking-wide">
                 Support</p>
               </div>

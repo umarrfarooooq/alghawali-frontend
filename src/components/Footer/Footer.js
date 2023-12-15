@@ -55,19 +55,19 @@ function Footer() {
               <ul className="text-white">
               
                 <li className="mb-4">
-                  <Link to={"/all-profiles"}>Maids</Link>
+                  <Link to={"/nepali-srilankan-housemaids"}>Maids</Link>
                 </li>
                 <li className="mb-4">
-                  <Link to={"/services"}>Nurses</Link>
+                  <Link to={"/house-maid-services"}>Nurses</Link>
                 </li>
                 <li className="mb-4">
-                  <Link to={"/services"}>Barista</Link>
+                  <Link to={"/house-maid-services"}>Barista</Link>
                 </li>
                 <li className="mb-4">
-                  <Link to={"/services"}>Waitress</Link>
+                  <Link to={"/house-maid-services"}>Waitress</Link>
                 </li>
                 <li className="mb-4">
-                  <Link to={"/services"}>Drivers</Link>
+                  <Link to={"/house-maid-services"}>Drivers</Link>
                 </li>
                 <li>
                   <Link to={"/contact"}>Contact Us</Link>

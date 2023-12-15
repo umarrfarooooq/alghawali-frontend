@@ -1,6 +1,5 @@
 import React from "react";
 import { useTranslation } from 'react-i18next';
-import image from "./Frame 289.png"
 import ButtonEl from "../UI/Button/Button";
 export const ContactCompo = () => {
   const { t } = useTranslation();
@@ -43,7 +42,7 @@ export const ContactCompo = () => {
           </div>
         </div>
         <div className="imageCon hidden lg:inline-block w-full">
-                <img src={image} alt="contact us" style={{alignSelf:"stretch"}}/>
+            <img src="https://res.cloudinary.com/dtcz2zuev/image/upload/w_500,q_auto/alghawalimanpower/skxk7i5pxljwfxpsnasw" alt="contact us" style={{alignSelf:"stretch"}}/>
         </div>
       </div>
     </div>

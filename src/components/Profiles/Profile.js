@@ -99,7 +99,7 @@ function Profile() {
             ))}
         </ItemsCarousel>
           <div className="text-center mt-8 py-8">
-              <Link to="/all-profiles">
+              <Link to="/nepali-srilankan-housemaids">
                 <ButtonEl bgColor="#107243" hoverBgColor="#107243" px={12} buttonTxt={t('profilesSection.buttonText')}/>
               </Link>
           </div>

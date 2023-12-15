@@ -30,9 +30,9 @@ export default function Navbar() {
 
   const navigation = [
     { name: t("navbar.menuItems.home"), href: "/", current: false },
-    { name: t("navbar.menuItems.aboutUs"), href: "/about", current: false },
-    { name: t("navbar.menuItems.services"), href: "/services", current: false },
-    { name: t("navbar.menuItems.blog"), href: "/blog", current: false },
+    { name: t("navbar.menuItems.aboutUs"), href: "/oman-nepali-housemaid", current: false },
+    { name: t("navbar.menuItems.services"), href: "/house-maid-services", current: false },
+    { name: t("navbar.menuItems.blog"), href: "/nepali-maids-muscat", current: false },
   ];
   const rightNavigation = [
     { name: "English", icon: "downArrow", href: "", current: false, dropDown: true }
@@ -42,8 +42,8 @@ export default function Navbar() {
     rightNavigation.push({ name: t("navbar.menuItems.logout"), href: "/", loginBtn: true });
   } else {
     rightNavigation.push(
-      { name: t("navbar.menuItems.signup"), href: "/signup", signupBtn: true },
-      { name: t("navbar.menuItems.login"), href: "/login", loginBtn: true }
+      { name: t("navbar.menuItems.signup"), href: "/nepali-housekeeper", signupBtn: true },
+      { name: t("navbar.menuItems.login"), href: "/maids-login", loginBtn: true }
     );
   }
   

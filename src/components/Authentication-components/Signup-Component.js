@@ -67,7 +67,7 @@ const handleSubmit = async (event) => {
     if (response.status === 201) {
       console.log('User registered successfully');
       setFieldRequiredMsg(false);
-      window.location.href = '/login';
+      window.location.href = '/maids-login';
     } else {
       if (response.status === 400) {
         setAlreadyRegisteredMsg(true);
@@ -171,7 +171,7 @@ const handleSubmit = async (event) => {
             </div>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link to="/login" variant="body2">
+                <Link to="/maids-login" variant="body2">
                   Already have an account? <span style={{color:"#253061"}}>Log In</span>
                 </Link>
               </Grid>

@@ -110,6 +110,7 @@ export default function SignIn() {
           <div  style={{display:`${incorrectCredentialsMsg? "block" : "none" }`}}>
             <Error message="Incorrect Phone.No or Password"/>
           </div>
+          
           <TextField
             margin="normal"
             required
@@ -135,7 +136,7 @@ export default function SignIn() {
             </div>
             <Grid container  justifyContent="flex-end">
               <Grid item>
-                <Link to="/signup" variant="body2">
+                <Link to="/nepali-housekeeper" variant="body2">
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>

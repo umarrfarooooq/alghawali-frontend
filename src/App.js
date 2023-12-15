@@ -77,14 +77,14 @@ function App() {
     <Router>
       <Routes>
       <Route path="/" element={<Suspense fallback={<div><Loading /></div>}><Home /></Suspense>} />
-      <Route path="/all-profiles" element={<Suspense fallback={<div><Loading /></div>}><AllMaidsProfilePage /></Suspense>} />
+      <Route path="/nepali-srilankan-housemaids" element={<Suspense fallback={<div><Loading /></div>}><AllMaidsProfilePage /></Suspense>} />
       <Route path="/maid-detail/:maidID" element={<MaidDetail />} />
-      <Route path="/about" element={<Suspense fallback={<div><Loading /></div>}><AboutUs /></Suspense>} />
-      <Route path="/services" element={<Suspense fallback={<div><Loading /></div>}><ServicesPage /></Suspense>} />
-      <Route path="/login" element={<Suspense fallback={<div><Loading /></div>}><LoginPage /></Suspense>} />
-      <Route path="/signup" element={<Suspense fallback={<div><Loading /></div>}><SignUpPage /></Suspense>} />
+      <Route path="/oman-nepali-housemaid" element={<Suspense fallback={<div><Loading /></div>}><AboutUs /></Suspense>} />
+      <Route path="/house-maid-services" element={<Suspense fallback={<div><Loading /></div>}><ServicesPage /></Suspense>} />
+      <Route path="/maids-login" element={<Suspense fallback={<div><Loading /></div>}><LoginPage /></Suspense>} />
+      <Route path="/nepali-housekeeper" element={<Suspense fallback={<div><Loading /></div>}><SignUpPage /></Suspense>} />
       <Route path="/contact" element={<Suspense fallback={<div><Loading /></div>}><ContactUs /></Suspense>} />
-      <Route path="/blog" element={<Suspense fallback={<div><Loading /></div>}><BlogPage /></Suspense>} />
+      <Route path="/nepali-maids-muscat" element={<Suspense fallback={<div><Loading /></div>}><BlogPage /></Suspense>} />
       <Route path="/on-demand" element={<Suspense fallback={<div><Loading /></div>}><OnDemandPage /></Suspense>} />
       <Route
         path="/terms-conditions"
