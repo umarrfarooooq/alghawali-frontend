@@ -10,6 +10,7 @@ const ContactUs = () =>{
     return(
         <>
         <Helmet>
+        <link rel="canonical" href="https:// https://www.alghawalimanpower.com/contact" />
             <meta name="keywords" content="nepali housemaid, sri lanka domestic worker,maids from nepal,indian housemaids, maid in muscat,nannies in Oman, cleaning service, nepal domestic help" />
             <meta name="description" content="Al Ghawali provides housemaid services in Oman for household. To hire a housekeeper, get in touch with us now." />
             <title>Professional Housekeeping Services in Muscat | Al Ghawali</title>
