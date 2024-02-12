@@ -8,6 +8,7 @@ import { useTranslation } from 'react-i18next';
 // import { VerifyTokenFrontend } from "./components/Authentication-components/verifyToken";
 import Loading from "./components/Loading/Loading";
 import MaidDetail from "./Pages/Maid-Detail"
+import BlogDetailsPage from './Pages/BlogDetails';
 
 
 const Home = lazy(() => import('./Pages/Home'));
@@ -85,6 +86,7 @@ function App() {
       <Route path="/nepali-housekeeper" element={<Suspense fallback={<div><Loading /></div>}><SignUpPage /></Suspense>} />
       <Route path="/contact" element={<Suspense fallback={<div><Loading /></div>}><ContactUs /></Suspense>} />
       <Route path="/nepali-maids-muscat" element={<Suspense fallback={<div><Loading /></div>}><BlogPage /></Suspense>} />
+      <Route path="/blogDetails" element={<Suspense fallback={<div><Loading /></div>}><BlogDetailsPage /></Suspense>} />
       <Route path="/on-demand" element={<Suspense fallback={<div><Loading /></div>}><OnDemandPage /></Suspense>} />
       <Route
         path="/terms-conditions"

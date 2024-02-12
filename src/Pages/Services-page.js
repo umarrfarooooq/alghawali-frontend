@@ -1,11 +1,17 @@
 import React from "react";
 import Navbar from "../components/Header/Navbar"
-import Breadcrumb from "../components/UI/Breadcrumbs/Breadcrumb";
+// import Breadcrumb from "../components/UI/Breadcrumbs/Breadcrumb";
 import AllServices from "../components/Services/All-Services";
 import Footer from "../components/Footer/Footer";
 import { Helmet } from "react-helmet";
+import NewBreadCrumb from "../components/UI/NewBreadcrumb/NewBreadCrumb";
+import NeedHelp from "../components/Need-Help/NeedHelp";
+import { useTranslation } from 'react-i18next';
 
 const ServicesPage = () =>{
+    const { t } = useTranslation();
+    const backgroundImageUrl = 'https://res.cloudinary.com/dtcz2zuev/image/upload/v1707748346/ndygmdky0do3chml1lxj.png';
+
     return(
         <>
             <Helmet>
@@ -15,9 +21,18 @@ const ServicesPage = () =>{
                 <title>Professional House Maid Services in Muscat | Al Ghawali</title>
             </Helmet>
             <Navbar />
-            <Breadcrumb url="/house-maid-services" pageName="Services"/>
-            <AllServices />
-            <Footer />
+            <div style={{ backgroundImage: `url(${backgroundImageUrl})`}} className="bg-cover">
+                <NewBreadCrumb
+                pageName={t('breadcrumb.services.pageName')}
+                title={t('breadcrumb.services.title')}
+                discription={t('breadcrumb.services.description')}
+                buttonTxt={t('breadcrumb.services.buttonText')}
+                 />
+                 
+                <AllServices />
+                <NeedHelp bgColor="#dbeff0"/>
+                <Footer />
+            </div>
         </>
     )
 }

@@ -6,7 +6,7 @@ import { VerifyTokenFrontend } from '../Authentication-components/verifyToken';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons';
 
-import logo from "./images/Group 2.svg"
+import logo from "./images/alghawali logo.svg"
 import navOpen from "./images/tornado.svg"
 import "./Navbar.css"
 import { Ripple, initTE } from "tw-elements";
@@ -42,8 +42,8 @@ export default function Navbar() {
     rightNavigation.push({ name: t("navbar.menuItems.logout"), href: "/", loginBtn: true });
   } else {
     rightNavigation.push(
-      { name: t("navbar.menuItems.signup"), href: "/nepali-housekeeper", signupBtn: true },
-      { name: t("navbar.menuItems.login"), href: "/maids-login", loginBtn: true }
+      // { name: t("navbar.menuItems.signup"), href: "/nepali-housekeeper", signupBtn: true },
+      // { name: t("navbar.menuItems.login"), href: "/maids-login", loginBtn: true }
     );
   }
   
@@ -81,8 +81,8 @@ export default function Navbar() {
                           to={item.href}
                           onClick={item.name === t("navbar.menuItems.logout") ? handleLogout : undefined}
                           className={classNames(
-                            item.current ? 'navItemTxt bg-white transition-all px-8' : 'text-gray-300 hover:text-white',
-                            'rounded-md px-4 py-2 text-sm font-medium transition-all'
+                            item.current ? 'navItemTxt bg-white transition-all px-8' : 'text-[#434146] hover:text-[#262F32] active:text-[#262F32]',
+                            'rounded-md px-4 py-2 text-sm font-normal hover:font-semibold active:font-bold transition-all'
                           )}
                           aria-current={item.current ? 'page' : undefined}
                         >
@@ -99,7 +99,7 @@ export default function Navbar() {
                           to={item.href}
                           onClick={item.name === t("navbar.menuItems.logout") ? handleLogout : undefined}
                           className={classNames(
-                            item.signupBtn ? 'signupItemTxt transition-all py-3 px-8' : item.loginBtn ? 'loginItemTxt transition-all py-3 px-8' : 'text-gray-300 hover:text-white',
+                            item.signupBtn ? 'signupItemTxt transition-all py-3 px-8' : item.loginBtn ? 'loginItemTxt transition-all py-3 px-8' : 'text-[#434146] hover:text-[#262F32]',
                             'rounded-md px-4 py-2 text-sm font-medium transition-all mx-2'
                           )}
                           aria-current={item.current ? 'page' : undefined}
@@ -134,7 +134,6 @@ export default function Navbar() {
                       ) : (
                         <div>
                         <span className='navIcon block h-6 w-6'><img src={navOpen} alt='Navbar Icon'></img></span>
-                        {/* <Bars3Icon className="block h-6 w-6" aria-hidden="true" /> */}
                         </div>
 
                       )}

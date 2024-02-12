@@ -14,6 +14,7 @@ function Profile() {
   const [numberOfCards, setNumberOfCards] = useState(3);
   const [maids, setMaids] = useState([]);
   const { t } = useTranslation();
+  const apiUrl = process.env.REACT_APP_API_URL;
 
   useEffect(() => {
     axiosInstense.get('api/v1/maids')
@@ -95,7 +96,7 @@ function Profile() {
           outsideChevron={false}
         >
           {maids.slice(0,5).map((maid, index) => (
-          <MaidProfiles key={index} data={maid} />
+          <MaidProfiles key={index} data={maid} backApiUrl={apiUrl}/>
             ))}
         </ItemsCarousel>
           <div className="text-center mt-8 py-8">

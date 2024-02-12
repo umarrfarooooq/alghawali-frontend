@@ -68,33 +68,31 @@ const Testimonials = ()=> {
                 Placeholder
                 </div>
                 }
-                // Carousel configurations
                 numberOfCards={numberOfCards}
                 gutter={12}
                 showSlither={true}
                 firstAndLastGutter={true}
                 freeScrolling={false}
-                // Active item configurations
                 requestToChangeActive={changeActiveItem}
                 activeItemIndex={activeItemIndex}
                 activePosition={"center"}
                 chevronWidth={24}
                 rightChevron={
-                    <div style={{backgroundColor:"#107243"}} className={`rightChev p-3 ml-4 absolute -bottom-20 rounded-lg`}>
+                    <div style={{border:"1px solid #8C979C"}} className={`rightChev hover:bg-[#107243] active:bg-[#175a3a] p-3 ml-4 absolute -bottom-20 rounded-lg`}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path d="M5 12H19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M12 5L19 12L12 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
+  <path d="M5 12H19" stroke="#8C979C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M12 5L19 12L12 19" stroke="#8C979C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
                   </div>
                   
                     
                 }
                 leftChevron={
-                  <div style={{backgroundColor:"#107243"}} className={`leftChev p-3 mr-4 absolute -bottom-20 rounded-lg`}>
+                  <div style={{border:"1px solid #8C979C"}} className={`leftChev hover:bg-[#107243] active:bg-[#175a3a] p-3 mr-4 absolute -bottom-20 rounded-lg`}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path d="M19 12H5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M12 5L5 12L12 19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
+  <path d="M19 12H5" stroke="#8C979C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M12 5L5 12L12 19" stroke="#8C979C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
                   </div>
                     
                 }

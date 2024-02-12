@@ -1,25 +1,30 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import { useLocation } from "react-router-dom";
-
+// import { useLocation } from "react-router-dom";
+import "./Profile.css"
 import {faArrowRight} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const MaidProfiles = (props) =>{
-    const location = useLocation();
-    const maxHeight = location.pathname === "/" ? "12rem" : "22rem";
-
-    const { name,religion, nationality, salery, position,experience, _id, maidImg} = props.data;
+    // const location = useLocation();
+    // const maxHeight = location.pathname === "/" ? "12rem" : "22rem";
+    const { name,religion, nationality, salery, appliedFor, _id, maidImg} = props.data;
+    const {backApiUrl} = props;
     return(
     
         <>
-            <div dir="ltr" style={{backgroundColor:"#F5F6FC", boxShadow:"0px 16px 24px 0px rgba(7, 42, 91, 0.12)"}} className="rounded-lg relative overflow-hidden p-2" key={props.i}>
-                <img loading="lazy" className="w-full rounded-md" style={{backgroundPosition:"center",backgroundSize:"cover", maxHeight,height:"auto",  objectFit:"cover", objectPosition:"top"}} src={`https://res.cloudinary.com/dtcz2zuev/image/upload/w_500,q_auto/${maidImg}`} alt="Service Detail" />
+            <div dir="ltr" style={{backgroundColor:"#FFFBFA", boxShadow:"0px 16px 24px 0px rgba(7, 42, 91, 0.12)"}} className="rounded-3xl min-h-[28rem] max-h-full hover:outline hover:outline-[#107243] outline-1 relative overflow-hidden transition-all  p-6" key={props.i}>
+            <Link to={`/maid-detail/${_id}`} className="flex flex-col h-full justify-between">
+            {maidImg && maidImg.includes("uploads/") ? (
+                            <img loading="lazy" className="maidProfileImage max-w-[17rem] min-w-full md:w-[16rem] h-[13.5rem] rounded-xl" style={{backgroundPosition:"center",backgroundSize:"cover", objectFit:"cover", objectPosition:"top"}} src={`${backApiUrl}${maidImg}`} alt="Service Detail" />
+                        ) : (
+                            <img loading="lazy" className="maidProfileImage max-w-[17rem] min-w-full md:w-[16rem] h-[13.5rem] rounded-xl" style={{backgroundPosition:"center",backgroundSize:"cover",  objectFit:"cover", objectPosition:"top"}} src={`https://res.cloudinary.com/dtcz2zuev/image/upload/${maidImg}`} alt="Service Detail" />
+                        )}
                 <div className="service-detail mt-2">
-                    <h3 className="text-base sm:text-xl" style={{color:"#1A1A1A"}}>{name}</h3>
+                    <h3 className="text-xl" style={{color:"#1A1A1A"}}>{name}</h3>
                     <div style={{fontSize:"0.625rem", color:"#5F5F5F"}} className="maidDetailSection sm:text-lg grid grid-cols-2">
                     <div className="occupation">
-                        <p style={{color:"#9E9E9E"}} className="font-normal text-xs">Occupation <p style={{color:"#5F5F5F"}} className="font-semibold text-sm">{position}</p></p>
+                        <p style={{color:"#9E9E9E"}} className="font-normal text-xs">Occupation <p style={{color:"#5F5F5F"}} className="font-semibold text-sm">{appliedFor}</p></p>
                     </div>
                     <div className="religion">
                         <p style={{color:"#9E9E9E"}} className="font-normal text-xs">Religion <p style={{color:"#5F5F5F"}} className="font-semibold text-sm">{religion}</p></p>
@@ -30,16 +35,14 @@ const MaidProfiles = (props) =>{
                     <div className="country">
                         <p style={{color:"#9E9E9E"}} className="font-normal text-xs">Country <p style={{color:"#5F5F5F"}} className="font-semibold text-sm">{nationality}</p></p>
                     </div>
-                    <div className="experience" style={{gridColumn: "span 2"}}>
-                        <p style={{color:"#9E9E9E"}} className="font-normal text-xs">Experience <p style={{color:"#5F5F5F"}} className="font-semibold text-sm">{experience ? experience : 'Nil'}</p></p>
-                    </div>
                     </div>
                     <div className="seeProfileBtn text-center">
                     <Link to={`/maid-detail/${_id}`}>
-                        <button style={{border:"1px solid #28BB76" ,fontSize:"0.75rem", color:"#28BB76"}} className="rounded-md py-2 w-full mx-auto text-center">See Profile <FontAwesomeIcon icon={faArrowRight} /></button>
+                        <button style={{border:"1px solid #28BB76" ,fontSize:"0.75rem", color:"#28BB76"}} className="rounded-md transition-all hover:bg-[#28BB76] hover:bg-opacity-30 active:bg-opacity-50 py-2 w-full mx-auto text-center">See Profile <FontAwesomeIcon icon={faArrowRight} /></button>
                     </Link>
                     </div>
                 </div>
+            </Link>
             </div>
         </>
     )
@@ -47,25 +50,3 @@ const MaidProfiles = (props) =>{
 
 export default MaidProfiles;
 
-//     <div dir="ltr" className="flex items-center w-full justify-between text-white text-sm rounded-3xl" key={props.i} style={{padding:"2rem 1rem", height: "13.125rem", width:"100%", background: "#253061" }}>
-    //     <div className="profile-of-maid w-full h-full sm:mr-6 mr-2 rounded-3xl overflow-hidden">
-    //         <div className="h-full bg-cover" style={{backgroundPosition:"start" ,width:"100%", backgroundImage: `url(https://res.cloudinary.com/dtcz2zuev/image/upload/${maidImg})` }}>
-    //         </div>
-    //     </div>
-    //     <div className="data-of-maid w-full flex flex-col items-center scale-90 sm:scale-100">
-    //     <div className="text-center"><p className="mb-3">{name}</p></div>
-    //     <div className="bg-white px-4 py-1 rounded-md" style={{color:"#253061"}}>
-    //         {position}
-    //     </div>
-    //     <div className="card-list">
-    //         <ul>
-    //             <li>Nationality: <span>{nationality}</span></li>
-    //             <li><span>Full Time</span></li>
-    //             <li>Monthly Salery: <span>{salery} OMR</span></li>
-    //         </ul>
-    //     </div>
-    //     <div className="bg-white mt-2 px-2 py-1 rounded-md" style={{color:"#253061", fontSize:".75rem"}}>
-    //         <Link to={`/maid-detail/${_id}`}>See Full Profile</Link>
-    //     </div>
-    //     </div>
-    //   </div>

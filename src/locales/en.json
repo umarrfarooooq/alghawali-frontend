@@ -43,11 +43,11 @@
             "fifthCatNam": "Driver"
         },
         "descriptions":{
-          "housemaids_description": "Hire Experienced Nepali,  Sri Lankan, Indian, and Myanmar maids.",
-          "baristas_description": "Get best Professional Sri Lanka, India, Myanmar and Nepali Barista",
-          "nurses_description": "Experienced Waitress from Myanmar, India,  Sri Lanka, and Nepal",
-          "waitresses_description": "Experience personalized and professional services with our team of waitresses.",
-          "driver_description": "Experience personalized and professional services with our team of drivers."
+          "housemaids_description": "Elevate your dining experience with our courteous and efficient waitstaff. Trained to provide exceptional service, our waiters and waitresses ensure a memorable meal for your guests.",
+          "baristas_description": "Get best Professional Sri Lanka, India, Myanmar and Nepali Barista Get best Professional Sri Lanka, India, Myanmar Barista Get best Professional Sri Lanka, India, Myanmar and Nepali Barista",
+          "nurses_description": "Experienced Waitress from Myanmar, India,  Sri Lanka, and Nepal Experienced Waitress from Myanmar, India,  Sri Lanka, and Nepal Experienced Waitress from Myanmar, India,  Sri Lanka, and Nepal",
+          "waitresses_description": "Experience personalized and professional services with our team of waitresses. Experience personalized and professional services with our team of waitresses.Experience personalized",
+          "driver_description": "Experience personalized and professional services with our team of drivers. Experience personalized and professional services with our team of drivers. Experience personalized and professional services with drivers."
         },
         "showProfileBtn":"Show Profiles"
       },
@@ -57,7 +57,7 @@
     },
     "chooseUsSection": {
       "mainText": "Al Ghawali is an excellent choice for anyone looking for housemaids and domestic worker services in Muscat, Oman. Our agency offers a wide range of services, including housekeeping services and childcare services.",
-      "subTitle": "Why Choose Us",
+      "subTitle": "Why Choose Us ?",
       "features": {
         "feature1": {
           "title": "Professional Approach",
@@ -77,11 +77,14 @@
         "title": "What Our Clients Say About Us"
     },
     "needHelpSection": {
-        "title": "Need Help ?",
+        "title": "Need Help Or Customized Package?",
         "description": "If you are looking for expert assistance, leave your mobile number below and our experts will contact you right away!",
+        "yourNumber": "Your Number",
         "buttonText": "Submit"
     },
     "footer": {
+        "title":"Al Ghawali",
+        "description":"Your trusted partner for top-tier maid <br /> services, enhancing your home life with <br /> skilled  and dependable professionals.",
         "Services": "Services",
         "followUsTitle": "Follow us",
         "legalTitle": "Legal",
@@ -90,8 +93,10 @@
         "copyright": "© 2023 Al-Ghawali ManPower. All Rights Reserved."
     },
     "aboutUs": {
-      "sectionTitle": "About Us: Alghawali Man Power",
-      "paragraph": "At Alghawali Man Power, we take pride in being your reliable partner in fulfilling the domestic needs of your home. Our commitment to excellence and dedication to providing top-tier maid supply services set us apart as a trusted choice for households seeking professional and dependable assistance. Our mission is to enhance the quality of life for families by seamlessly connecting them with skilled and qualified maids. We understand the importance of a harmonious home environment, and our goal is to contribute to that harmony by delivering exceptional maid supply services that cater to your unique requirements."
+      "sectionTitle": "About Us",
+      "sectionTitle2": "Our Vision",
+      "paragraph": "Welcome to Al Ghawali Manpower Supply, your trusted partner for premium workforce solutions. With a vision to redefine excellence, we take pride in being a leading provider of skilled and reliable professionals across diverse sectors. Explore our commitment to delivering tailored manpower solutions for your business success.",
+      "paragraph2": "At Al Ghawali, our vision is a world where businesses thrive with the support of a dependable and skilled workforce. We aspire to bridge the gap between talent and opportunity, empowering both businesses and individuals to reach their full potential."
     },
 
       "contactForm": {
@@ -147,7 +152,122 @@
         "subTxt": "Please enter your number, our team will get back to you",
         "inputPlaceholder": "Enter Your Ph. No",
         "submitButton": "Submit"
-      }
-        
+      },
+      "aboutCompanyComponent":{
+        "services": {
+          "title": "60+",
+          "description": "Services"
+        },
+        "workers": {
+          "title": "3200",
+          "description": "Workers"
+        },
+        "clients": {
+          "title": "2177",
+          "description": "Clients"
+        },
+        "support": {
+          "title": "24Hrs",
+          "description": "Support"
+        }
+      },
+      "whyChooseUs": {
+        "box1":{
+          "title1": "Diverse Expertise",
+          "content1": "Benefit from a diverse range of skilled professionals across various industries. From hospitality to construction, our expertise spans a multitude of sectors."
+        },
+        "box2":{
+          "title2": "Flexibility",
+          "content2": "Tailor your service packages to precisely fit your needs. Whether it's specific roles, unique staffing requirements, or diverse skill sets, we've got you covered."
+        },
+        "box3":{
+          "title3": "Tailored Solutions",
+          "content3": "No one-size-fits-all approach. We pride ourselves on crafting customized staffing solutions to meet the unique demands of your business."
+        },
+        "box4":{
+          "title4": "Comprehensive Services",
+          "content4": "Beyond staffing, we offer a comprehensive suite of services. From event planning to IT support, we're your one-stop solution for diverse business needs."
+        },
+        "box5":{
+          "title5": "Quality Assurance",
+          "content5": "Expect nothing less than excellence. Our commitment to quality ensures that every professional we provide is highly skilled, reliable, and dedicated."
+        },
+        "box6":{
+          "title6": "24/7 Support",
+          "content6": "Your business doesn't sleep, and neither do we. Our 24/7 support ensures that you can reach us whenever you need assistance or have a query."
+        }
+      },
+      "filterSection":{
+        "search": "Search",
+        "clearAll": "Clear All",
+        "yourAppliedFilters": "Your Applied Filters",
+        "country": "Country",
+        "experience": "Experience",
+        "languages": "Languages",
+        "religion": "Religion",
+        "clear": "Clear",
+        "applyFilter": "Apply Filter",
+        "filter": "Filter",
+        "filterOptions": {
+          "countries": {
+            "myanmar": "Myanmar",
+            "india": "India",
+            "sriLanka": "Sri Lanka",
+            "nepal": "Nepal",
+            "philippines": "Philippines"
+          },
+          "experience": {
+            "experienced": "Experienced",
+            "new": "New"
+          },
+          "languages": {
+            "english": "English",
+            "arabic": "Arabic",
+            "other": "Other"
+          },
+          "religions": {
+            "muslim": "Muslim",
+            "christian": "Christian",
+            "otherReligion": "Other"
+          }
+        }
+      },
+      "breadcrumb":{
+        "aboutUs": {
+          "pageName": "About Us",
+          "title": "Al Ghawali Manpower Supply",
+          "description": "Where excellence meets commitment. With a vision to redefine manpower services, we take pride in being a leading provider of skilled professionals across diverse industries. Explore our commitment to excellence in supplying top-notch manpower for your business needs."
+        },
+        "services": {
+            "pageName": "Services",
+            "title": "Need Help Or Customized Package?",
+            "description": "Al Ghawali Manpower Supply excels in delivering proficient housemaids, experienced waitresses, and more, catering to diverse staffing needs across Oman with unmatched reliability and professionalism.",
+            "buttonText": "Contact Us"
+        },
+        "blogs": {
+          "pageName": "Blogs",
+          "title": "Our Blogs",
+          "description": "Explore our blog for a blend of insightful articles, latest trends, and engaging content. From life hacks to tech updates, we've got your curiosity covered. Join us on this journey of discovery and enjoy a delightful read. Welcome to a space where ideas flourish and words come alive!"
+        }
+      },
+      "aboutUsMission": {
+        "title": "Our Mission",
+        "connectingSkills": {
+          "subtitle": "Connecting Skills to Needs",
+          "content": "Our mission is to link businesses with the right talent. Utilizing meticulous recruitment processes, we ensure that the professionals we provide possess the skills and dedication necessary to contribute to the success of our clients."
+        },
+        "exceedingExpectations": {
+          "subtitle": "Exceeding Expectations",
+          "content": "Our mission is to go beyond traditional manpower services, aiming to exceed expectations and contribute to the growth and efficiency of the businesses we serve."
+        },
+        "buildingPartnerships": {
+          "subtitle": "Building Lasting Partnerships",
+          "content": "We believe in building enduring partnerships with our clients. Prioritizing transparency, reliability, and a customer-centric approach, we aspire to be a trusted extension of your team."
+        }
+      } ,
+      "officeSection": {
+        "title": "Our Offices",
+        "name":"Oman Office"
+      } 
   }
   

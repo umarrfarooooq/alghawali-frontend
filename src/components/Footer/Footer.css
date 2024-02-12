@@ -8,3 +8,20 @@ a{
 .footerItems a:hover{
     color: white;
 }
+
+@media (min-width: 1280px) {
+    .footerItems{
+        grid-template-columns: 1fr 1fr 1fr 1.5fr;
+    }
+}
+@media (max-width: 1200px) {
+    .instaPostsGrid{
+        grid-template-columns: 1fr 1fr 1.5fr;
+    }
+}
+@media (max-width: 320px) {
+  .instaGridBox{
+      height: 4rem;
+      width: 4rem;
+  }
+}

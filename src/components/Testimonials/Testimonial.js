@@ -26,7 +26,6 @@ const Testimonial = (props)=>{
                 <div className="font-medium">
                   {props.testimonial.name}
                 </div>
-                <div className="text-xs font-normal">{props.testimonial.position}</div>
               </div>
             </div>
             <div className="font-normal mt-3 text-sm">

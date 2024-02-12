@@ -1,11 +1,10 @@
 import { Disclosure} from '@headlessui/react'
 import { MenuIcon as Bars3Icon, XIcon as XMarkIcon } from '@heroicons/react/outline';
 import { VerifyTokenFrontend } from '../../Authentication-components/verifyToken';
-
+import logo from "../../Header/images/alghawali logo.svg"
 import { useTranslation } from "react-i18next";
 import { Link } from 'react-router-dom';
 import "../../Header/Navbar.css"
-import backIcon from "../../../assets/imgs/svg back.svg"
 import { Ripple, initTE } from "tw-elements";
 initTE({ Ripple });
 
@@ -47,7 +46,7 @@ export default function MaidDetailPageNavbar() {
                     <Link to="/">
                     <img
                         className="h-16 w-20"
-                        src={backIcon}
+                        src={logo}
                         alt="Your Company"
                       />
                     </Link>
@@ -61,7 +60,7 @@ export default function MaidDetailPageNavbar() {
                           to={item.href}
                           onClick={item.name === t("navbar.menuItems.logout") ? handleLogout : undefined}
                           className={classNames(
-                            item.current ? 'navItemTxt bg-white transition-all px-8' : 'text-gray-300 hover:text-white',
+                            item.current ? 'navItemTxt bg-[#dbeff0] transition-all px-8' : 'text-gray-300 hover:text-white',
                             'rounded-md px-4 py-2 text-sm font-medium transition-all'
                           )}
                           aria-current={item.current ? 'page' : undefined}

@@ -19,6 +19,8 @@ const ButtonEl = (props) =>{
                     px:props.px || 4,
                     py:props.py || 1,
                     fontFamily: "'Poppins', sans-serif",
+                    border:props.border,
+                    borderColor:props.borderColor
                 }}
                 variant="contained"
                 type={props.buttonType}

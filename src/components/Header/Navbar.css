@@ -1,26 +1,20 @@
 .navBar{
-    background: #253061;
+    background: #FFFBFA;
+    box-shadow: 0px 2px 6px 0px rgba(0, 7, 38, 0.32);
 }
 .signupItemTxt{
     color:#28BB76;
     padding-inline: 1.12rem !important;
-    border: 1px solid #28BB76;
 }
-.signupItemTxt:hover{
-  background-color: white;
-  border: 1px solid #fff;
 
-}
 .loginItemTxt{
-    color:#fff;
-    border: 1px solid #28BB76;
+    color: #107243;
+    border: 1px solid #107243;
     padding-inline: 1.12rem !important;
-    background-color: #28BB76;
 }
 .loginItemTxt:hover{
-    color: #fff;
-    background-color: blue;
-    border: 1px solid blue;
+    background-color: rgba(40, 187, 118, 0.3);
+    border: 1px solid rgba(40, 187, 118, 0.3);
 }
 
 .upperHeader{
