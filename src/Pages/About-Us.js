@@ -7,7 +7,7 @@ import {Helmet} from "react-helmet";
 import NewBreadCrumb from "../components/UI/NewBreadcrumb/NewBreadCrumb";
 import { useTranslation } from 'react-i18next';
 const AboutUs = () => {
-    const backgroundImageUrl = 'https://res.cloudinary.com/dtcz2zuev/image/upload/v1707748346/ndygmdky0do3chml1lxj.png';
+    const backgroundImageUrl = 'https://res.cloudinary.com/dtcz2zuev/image/upload/v1707893084/alghawalimanpower/qubkrpihvvdey8uznlpm.jpg';
     const { t } = useTranslation();
     return(
         <>

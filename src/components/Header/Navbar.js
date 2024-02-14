@@ -109,9 +109,9 @@ export default function Navbar() {
                               <option value="en">{t('upperHeader.language.english')}</option>
                               <option value="ar">{t('upperHeader.language.arabic')}</option>
                             </select>}
-                            </span>
                           <span className=''>{item.name !== "English" ? item.name : ""}</span>
                           {item.icon === 'downArrow' && <FontAwesomeIcon icon={faAngleDoubleDown} />}
+                          </span>
                         </Link>
                       </div>
                       ))}
@@ -201,9 +201,9 @@ export default function Navbar() {
                               <option value="en">{t('upperHeader.language.english')}</option>
                               <option value="ar">{t('upperHeader.language.arabic')}</option>
                             </select>}
-                            </span>
                           <span className=''>{item.name !== "English" ? item.name : ""}</span>
                           {item.icon === 'downArrow' && <FontAwesomeIcon icon={faAngleDoubleDown} />}
+                          </span>
                         </Link>
                       </div>
                       

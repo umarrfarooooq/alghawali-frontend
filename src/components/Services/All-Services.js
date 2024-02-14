@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 
 const AllServices = () =>{
     const { t } = useTranslation();
-
+    const categories = t("services.categories", { returnObjects: true }) || [];
         return(
             <>
             <div className="container my-12">
@@ -24,13 +24,18 @@ const AllServices = () =>{
                     </div>
                 </div>
             </div>
-                <div className="space-y-4 md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-8 md:space-y-0 container my-12">
-                    <ServiceCard imageAlt="Smiling Nepali housemaid holding cleaning equipment in her hand" address={"/nepali-srilankan-housemaids?category=Domestic Worker"} catName={t('services.categories.fCatNam')} description={t('services.descriptions.housemaids_description')} image="https://res.cloudinary.com/dtcz2zuev/image/upload/alghawalimanpower/o153shzrwulqyiszywfu"/>
-                    <ServiceCard imageAlt="Nepali maid in a cheerful mood, ready to serve, dressed in a crisp white uniform" address={"/nepali-srilankan-housemaids?category=Barista"} catName={t('services.categories.sCatNam')} description={t('services.descriptions.baristas_description')} image="https://res.cloudinary.com/dtcz2zuev/image/upload/alghawalimanpower/nvfyq40ialqvudruubxg"/>
-                    <ServiceCard imageAlt="Nepali housemaid in a bright yellow uniform, smiling, with a waiter's card around her neck" address={"/nepali-srilankan-housemaids?category=Waitress"} catName={t('services.categories.tCatNam')} description={t('services.descriptions.waitresses_description')} image="https://res.cloudinary.com/dtcz2zuev/image/upload/alghawalimanpower/eteowakhgd6xq386h1jm"/>
-                    <ServiceCard imageAlt="A nurse from Nepal is in teal uniform with a stethoscope and clipboard." address={"/nepali-srilankan-housemaids?category=Nurses"} catName={t('services.categories.forthCatNam')} description={t('services.descriptions.nurses_description')} image="https://res.cloudinary.com/dtcz2zuev/image/upload/alghawalimanpower/reobsjvhdng7xhmrehzi"/>
-                    <ServiceCard address={"/nepali-srilankan-housemaids?category=Driver"} catName={t('services.categories.fifthCatNam')} description={t('services.descriptions.driver_description')} image="https://res.cloudinary.com/dtcz2zuev/image/upload/w_500,q_auto/alghawalimanpower/c0q23b7tcfpixbcssrrh"/>
-               </div>
+                <div className="space-y-4 flex flex-col md:gap-8 md:grid md:grid-cols-2 lg:grid-cols-4 md:space-y-0 container my-12">
+                {categories.map((category, index) => (
+                    <ServiceCard
+                        key={index}
+                        imageAlt={category.description}
+                        address={`/nepali-srilankan-housemaids?category=${category.url}`}
+                        catName={category.name}
+                        description={category.description}
+                        image={`https://res.cloudinary.com/dtcz2zuev/image/upload/alghawalimanpower/${category.image}`}
+                    />
+                    ))}
+                </div>
             
             </>
         )

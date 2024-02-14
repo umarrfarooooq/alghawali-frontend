@@ -7,7 +7,7 @@ import Footer from "../components/Footer/Footer";
 
 const MaidDetail = () =>{
     const apiUrl = process.env.REACT_APP_API_URL;
-    const backgroundImageUrl = 'https://res.cloudinary.com/dtcz2zuev/image/upload/v1707748346/ndygmdky0do3chml1lxj.png';
+    const backgroundImageUrl = 'https://res.cloudinary.com/dtcz2zuev/image/upload/v1707893084/alghawalimanpower/qubkrpihvvdey8uznlpm.jpg';
 
     return(
         <>

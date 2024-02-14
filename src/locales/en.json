@@ -32,25 +32,151 @@
         "description": "Al Ghawali Manpower Supply excels in delivering proficient housemaids, experienced waitresses, and more, catering to diverse staffing needs across Oman with unmatched reliability and professionalism.",
         "buttonText": "Contact Us"
       },
-      "services": {
-        "sectionTitle": "Services we Offer",
-        "seeAllButton": "See All",
-        "categories": {
-            "fCatNam":"House Maids",
-            "sCatNam":"Barista",
-            "tCatNam":"Waitress",
-            "forthCatNam":"Nurses",
-            "fifthCatNam": "Driver"
+        "services": {
+          "sectionTitle": "Services we Offer",
+          "seeAllButton": "See All",
+          "showProfileBtn": "Show Profiles",
+          "categories": [
+            {
+              "name": "Domestic Worker",
+              "url": "Domestic Worker",
+              "description": "Elevate your dining experience with our courteous and efficient waitstaff. Trained to provide exceptional service, our waiters and waitresses ensure a memorable meal for your guests.",
+              "image": "o153shzrwulqyiszywfu"
+            },
+            {
+              "name": "Barista",
+              "url": "Barista",
+              "description": "Enjoy a delicious cup of coffee or tea with our skilled and friendly baristas. They can prepare and serve a variety of hot and cold beverages, from espresso to latte to cappuccino.",
+              "image": "nvfyq40ialqvudruubxg"
+            },
+            {
+              "name": "Waitress",
+              "url": "Waitress",
+              "description": "Experience personalized and professional services with our team of waitresses. They can take and deliver your orders, provide menu recommendations, and ensure your satisfaction and comfort.",
+              "image": "eteowakhgd6xq386h1jm"
+            },
+            {
+              "name": "Nurses",
+              "url": "Nurses",
+              "description": "Receive quality and compassionate care from our qualified and dedicated nurses. They can provide medical assistance, monitor your health, administer medications, and offer support.",
+              "image": "reobsjvhdng7xhmrehzi"
+            },
+            {
+              "name": "Driver",
+              "url": "Driver",
+              "description": "Travel safely and comfortably with our reliable and courteous drivers. They can drive you to any destination, using the best routes and vehicles, and following the traffic rules and regulations.",
+              "image": "c0q23b7tcfpixbcssrrh"
+            },
+            {
+              "name": "Housekeeping Staff",
+              "url": "Housekeeping Staff",
+              "description": "Keep your home or office clean and tidy with our professional housekeeping staff. They are trained to handle all kinds of cleaning tasks, from dusting and vacuuming to sanitizing and disinfecting.",
+              "image": "xp6qmtkez0hub4m1b5vu"
+            },
+            {
+              "name": "Room Boy",
+              "url": "Room Boy",
+              "description": "Make your guests feel welcome and comfortable with our friendly and helpful room boys. They are responsible for cleaning and maintaining the rooms, delivering room service, and attending to any requests or complaints.",
+              "image": "x6qswbbpw3xsmrcaom3z"
+            },
+            {
+              "name": "Dishwasher",
+              "url": "Dishwasher",
+              "description": "Save time and energy by hiring our efficient and reliable dishwashers. They can wash, dry, and store all kinds of dishes, utensils, and cookware, using proper hygiene and safety standards.",
+              "image": "k3fnpmwiq1dss2tktjyv"
+            },
+            {
+              "name": "Cleaner",
+              "url": "Cleaner",
+              "description": "Whether you need a one-time deep cleaning or a regular maintenance cleaning, our cleaners are ready to serve you. They can clean any type of surface, furniture, or appliance, using eco-friendly products and equipment.",
+              "image": "ilgxvplznejhqvlo1xv9"
+            },
+            {
+              "name": "Mason",
+              "url": "Mason",
+              "description": "If you need to build, repair, or renovate any brick, stone, or concrete structure, our masons are the experts you need. They can work on walls, floors, foundations, chimneys, fireplaces, and more, with quality craftsmanship and durability.",
+              "image": "dnrwcauztfye9ikrxbe3"
+            },
+            {
+              "name": "Electrician",
+              "url": "Electrician",
+              "description": "For any electrical installation, repair, or maintenance, you can trust our licensed and experienced electricians. They can handle wiring, lighting, outlets, switches, circuit breakers, panels, generators, and more, with safety and efficiency.",
+              "image": "wgv7smmdhvd0bq2ulyri"
+            },
+            {
+              "name": "Plumber",
+              "url": "Plumber",
+              "description": "Don't let plumbing problems ruin your day. Call our skilled and reliable plumbers to fix any leak, clog, or damage in your pipes, faucets, toilets, sinks, showers, bathtubs, water heaters, or drains.",
+              "image": "nx8xpyzmaaah4sbnlbve"
+            },
+            {
+              "name": "AC Technician",
+              "url": "AC Technician",
+              "description": "Keep your air conditioning system running smoothly and efficiently with our AC technicians. They can install, repair, service, and maintain any type of AC unit, from window to split to central, using the latest tools and techniques.",
+              "image": "dl4ivlpphyvtj32kb7vj"
+            },
+            {
+              "name": "Carpenter",
+              "url": "Carpenter",
+              "description": "Transform your space with our creative and professional carpenters. They can design, build, and install any kind of wooden furniture, cabinets, shelves, doors, windows, frames, or structures, using high-quality materials and finishes.",
+              "image": "z2ep0zy93pxsexhodjeo"
+            },
+            {
+              "name": "Painter",
+              "url": "Painter",
+              "description": "Give your walls a fresh and beautiful look with our expert painters. They can paint any interior or exterior surface, using the best quality paints and brushes, and following your preferred color scheme and style.",
+              "image": "gq1wr07qnofbo7yus78d"
+            },
+            {
+              "name": "Labour/Helper",
+              "url": "Labour Helper",
+              "description": "Need some extra hands for your project or task? Hire our hardworking and trustworthy labourers/helpers. They can assist you with any kind of manual work, such as loading, unloading, moving, lifting, digging, or cleaning.",
+              "image": "so7jpp90t61yz8ca02z7"
+            },
+            {
+              "name": "Security Guards",
+              "url": "Security Guards",
+              "description": "Protect your property and people with our trained and licensed security guards. They can provide round-the-clock surveillance, access control, patrolling, alarm response, and emergency assistance, using the latest security equipment and protocols.",
+              "image": "itmc4meu6xlrm57x0rim"
+            },
+            {
+              "name": "IT Staff",
+              "url": "IT Staff",
+              "description": "Enhance your business performance and productivity with our IT staff. They can provide IT support, troubleshooting, networking, software development, web design, data analysis, and more, using the latest technologies and best practices.",
+              "image": "proeh0wughiywfxa6uk6"
+            },
+            {
+              "name": "Event Staffing",
+              "url": "Event Staffing",
+              "description": "Make your event a success with our event staffing service. We can provide you with any type of event staff, such as hosts, hostesses, promoters, models, entertainers, photographers, videographers, caterers, bartenders, and more.",
+              "image": "/txh0lso0xtxlcqttqor9"
+            },
+            {
+              "name": "Gardeners",
+              "url": "Gardeners",
+              "description": "Create and maintain a beautiful and healthy garden with our professional gardeners. They can plant, prune, weed, water, fertilize, and mulch any type of plants, flowers, trees, or shrubs, using organic and eco-friendly methods.",
+              "image": "knwrkjtrnvcwzfl36bmq"
+            },
+            {
+              "name": "Event Planner",
+              "url": "Event Planner",
+              "description": "Plan and organize your dream event with our experienced and creative event planners. They can help you with every aspect of your event, from budgeting and venue selection to theme and decoration to catering and entertainment.",
+              "image": "bk3lfg8frxxcyzktsehg"
+            },
+            {
+              "name": "Loading Unloading Helper",
+              "url": "Loading Unloading Helper",
+              "description": "Save time and effort by hiring our loading unloading helpers. They can help you load and unload any type of items, such as furniture, appliances, boxes, or luggage, using proper equipment and techniques.",
+              "image": "o4jsresy7bzhum8ews7s"
+            },
+            {
+              "name": "Beauticians",
+              "url": "Beautician",
+              "description": "Pamper yourself with our professional and talented beauticians. They can provide you with a range of beauty services, such as hair cutting, styling, coloring, makeup, manicure, pedicure, facial, waxing, threading, and more.",
+              "image": "l7wzb5wertsyojts94sh"
+            }
+          ]
         },
-        "descriptions":{
-          "housemaids_description": "Elevate your dining experience with our courteous and efficient waitstaff. Trained to provide exceptional service, our waiters and waitresses ensure a memorable meal for your guests.",
-          "baristas_description": "Get best Professional Sri Lanka, India, Myanmar and Nepali Barista Get best Professional Sri Lanka, India, Myanmar Barista Get best Professional Sri Lanka, India, Myanmar and Nepali Barista",
-          "nurses_description": "Experienced Waitress from Myanmar, India,  Sri Lanka, and Nepal Experienced Waitress from Myanmar, India,  Sri Lanka, and Nepal Experienced Waitress from Myanmar, India,  Sri Lanka, and Nepal",
-          "waitresses_description": "Experience personalized and professional services with our team of waitresses. Experience personalized and professional services with our team of waitresses.Experience personalized",
-          "driver_description": "Experience personalized and professional services with our team of drivers. Experience personalized and professional services with our team of drivers. Experience personalized and professional services with drivers."
-        },
-        "showProfileBtn":"Show Profiles"
-      },
       "profilesSection": {
         "title": "Available Profiles",
         "buttonText": "See All"
@@ -90,7 +216,7 @@
         "legalTitle": "Legal",
         "privacyPolicy": "Privacy Policy",
         "termsAndConditions": "Terms & Conditions",
-        "copyright": "© 2023 Al-Ghawali ManPower. All Rights Reserved."
+        "copyright": "© 2024 Al-Ghawali ManPower. All Rights Reserved."
     },
     "aboutUs": {
       "sectionTitle": "About Us",

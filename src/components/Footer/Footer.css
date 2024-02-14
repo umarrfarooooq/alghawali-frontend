@@ -11,7 +11,7 @@ a{
 
 @media (min-width: 1280px) {
     .footerItems{
-        grid-template-columns: 1fr 1fr 1fr 1.5fr;
+        grid-template-columns: 1fr 1fr 1fr 1.5fr !important;
     }
 }
 @media (max-width: 1200px) {

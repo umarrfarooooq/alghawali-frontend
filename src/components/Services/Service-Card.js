@@ -12,18 +12,18 @@ const ServiceCard = (props) =>{
     const height = location.pathname === "/" ? "" : "fit-content";
 
     const { t } = useTranslation();
-
+    
     return(
         <>
         <Link to={props.address}>
-        <div style={{ height}} className="rounded-lg bg-[#FFFBFA] cursor-pointer relative overflow-hidden hover:shadow-md p-6 hover:outline hover:outline-[#107243] outline-1 transition-all">
+        <div style={{ height}} className="rounded-lg bg-[#FFFBFA] md:my-0 cursor-pointer relative overflow-hidden hover:shadow-md p-6 hover:outline hover:outline-[#107243] outline-1 transition-all">
                 <img loading="lazy" className="w-full shadow-md rounded-md max-h-[17rem] md:max-h-[13rem]" style={{ width:"100%", height:"100%", objectFit:"cover", objectPosition:"top"}} src={props.image} alt={props.imageAlt || "Service Detail"} />
                 <div className="service-detail mt-2 md:text-start flex flex-col justify-between">
                     <h3 className="text-xs sm:text-xl" style={{color:"#1A1A1A"}}>
-                    {props.catName}
+                    {props.catName.slice(0, 15)}{props.catName.length > 15 ? "..." : ""}
                     </h3>
-                    <p style={{fontSize:"0.625rem", color:"#5F5F5F", lineHeight:"1.31rem"}} className="sm:text-base leading-4">
-                    {props.description}
+                    <p style={{ fontSize: "0.625rem", color: "#5F5F5F", lineHeight: "1.31rem" }} className="sm:text-base leading-4">
+                        {props.description.slice(0, 100)}...
                     </p>
                     <div className="seeProfileBtn text-center">
                     <Link to={props.address}>
