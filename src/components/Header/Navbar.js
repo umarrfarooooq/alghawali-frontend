@@ -1,6 +1,6 @@
 import { Disclosure} from '@headlessui/react'
 import { XIcon as XMarkIcon } from '@heroicons/react/outline';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from "react-i18next";
 import { VerifyTokenFrontend } from '../Authentication-components/verifyToken';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -10,6 +10,7 @@ import logo from "./images/alghawali logo.svg"
 import navOpen from "./images/tornado.svg"
 import "./Navbar.css"
 import { Ripple, initTE } from "tw-elements";
+import { useEffect } from 'react';
 initTE({ Ripple });
 
 const isValid = VerifyTokenFrontend();
@@ -22,9 +23,22 @@ function classNames(...classes) {
 export default function Navbar() {
   const { t, i18n } = useTranslation();
 
+  const location = useLocation();
+  const lang = new URLSearchParams(location.search).get('lang');
+  useEffect(() => {
+    if(lang) {
+      localStorage.setItem('lang', lang)
+      const selectedLanguage = localStorage.getItem('lang')
+      i18n.changeLanguage(selectedLanguage);
+    }
+  }, [i18n, lang])
+  
   const handleLanguageChange = (e) => {
-    const selectedLanguage = e.target.value;
+    const selectedLanguageInput = e.target.value;
+    localStorage.setItem('lang', selectedLanguageInput)
+    const selectedLanguage = localStorage.getItem('lang')
     i18n.changeLanguage(selectedLanguage);
+
   };
 
 

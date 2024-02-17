@@ -1,5 +1,4 @@
 import React from "react";
-// import about from "../Services/images/first.png";
 import "./About.css"
 import { useTranslation } from 'react-i18next';
 

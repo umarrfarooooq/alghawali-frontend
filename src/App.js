@@ -52,6 +52,7 @@ function App() {
   // const isAuthenticated = VerifyTokenFrontend();
   const { i18n } = useTranslation();
 
+  
   useEffect(() => {
     const detectedLanguage = i18n.language;
 
