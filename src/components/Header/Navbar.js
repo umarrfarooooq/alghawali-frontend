@@ -114,7 +114,7 @@ export default function Navbar() {
                           onClick={item.name === t("navbar.menuItems.logout") ? handleLogout : undefined}
                           className={classNames(
                             item.signupBtn ? 'signupItemTxt transition-all py-3 px-8' : item.loginBtn ? 'loginItemTxt transition-all py-3 px-8' : 'text-[#434146] hover:text-[#262F32]',
-                            'rounded-md px-4 py-2 text-sm font-medium transition-all mx-2'
+                            'rounded-md py-2 text-sm font-medium transition-all'
                           )}
                           aria-current={item.current ? 'page' : undefined}
                         >

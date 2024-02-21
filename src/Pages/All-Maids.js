@@ -8,12 +8,17 @@ import Footer from "../components/Footer/Footer";
 import NeedHelp from "../components/Need-Help/NeedHelp";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
+import ButtonEl from "../components/UI/Button/Button";
+import AddCustomRequirmentsForm from "../components/CustomRequirements/AddCustomRequirement";
+import Backdrop from "../components/UI/BackDrop/Backdrop";
+import GoogleAdsConversionTracking from "../components/GoogleAdsConversionTracker/GoogleAdsConversionTracker";
 
 
 const AllMaidsProfilePage = () => {
     const [searchTerm, setSearchTerm] = useState("");
     const [filterSearchTerm, setFilterSearchTerm] = useState("");
     const [isFilterOpen, setIsFilterOpen] = useState(false);
+    const [isFormVisible, setIsFormVisible] = useState(false);
     const [selectedCountries, setSelectedCountries] = useState([]);
     const [selectedReligions, setSelectedReligions] = useState([]);
     const [selectedLanguages, setSelectedLanguages] = useState([]);
@@ -24,10 +29,13 @@ const AllMaidsProfilePage = () => {
     const handleFilterToggle = () => {
       setIsFilterOpen(!isFilterOpen);
     };
-    console.log(selectedCountries);
     const handleFilterClose = () => {
       setIsFilterOpen(false);
     };
+
+    const toggleFormVisibility = () => {
+        setIsFormVisible(prevState => !prevState);
+      };
     const backgroundImageUrl = 'https://res.cloudinary.com/dtcz2zuev/image/upload/v1707893084/alghawalimanpower/qubkrpihvvdey8uznlpm.jpg';
 
     return (
@@ -37,12 +45,25 @@ const AllMaidsProfilePage = () => {
                 <meta name="keywords" content="nepali housemaid, sri lanka domestic worker,maids from nepal,indian housemaids, maid in muscat,nannies in Oman, cleaning service, nepal domestic help" />
                 <meta name="description" content="Get the best housemaid services in Oman with Al Ghawali. Our experienced housekeepers are trained to provide quality services." />
                 <title>Muscat House Maid Services by Al Ghawali</title>
+                <GoogleAdsConversionTracking />
+                <script>
+                {`
+                    gtag('event', 'conversion', {'send_to': 'AW-11463168320/avLTCLzqr5QZEMCiiNoq'});
+                `}
+                </script>
             </Helmet>
+            
             <Navbar />
-
+            {isFormVisible && <Backdrop showBackdrop={true} zIndex={19}/>}
         
-            <div style={{ backgroundImage: `url(${backgroundImageUrl})`}} className="bg-cover py-12">
-            <div className="flex container items-center gap-4 mb-2 md:mb-0">
+            <div style={{ backgroundImage: `url(${backgroundImageUrl})`}} className="bg-cover relative py-12">
+            {isFormVisible && (
+              <aside className="absolute z-[20] right-0 sm:right-8 -mt-8">
+              <AddCustomRequirmentsForm onCloseForm={toggleFormVisibility} />
+              </aside>
+          )}
+            <div className="flex flex-col sm:flex-row container sm:items-center justify-between gap-4 mb-2 md:mb-0">
+            <div className="flex items-center gap-4">
                 <div onClick={() => navigate(-1)} className='bg-[#fff] cursor-pointer p-3 rounded-lg'>
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
     <path d="M12 5L5 12L12 19" stroke="#262F32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -50,6 +71,10 @@ const AllMaidsProfilePage = () => {
                       </svg>
                 </div>
                 <span className="text-base md:text-2xl font-bold">{category ? category : "Available Profiles"}</span>
+            </div>
+            <div onClick={toggleFormVisibility}>
+                <ButtonEl bgColor="#107243" hoverBgColor="#107243" px={4} py={2} buttonTxt="Custom Requirement" />
+            </div>
             </div>
                 <div className="md:hidden container flex items-start sm:items-center  flex-col sm:flex-row justify-between gap-2">
                     <Search onSearch={setSearchTerm} />

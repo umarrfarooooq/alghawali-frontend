@@ -6,6 +6,7 @@ import Footer from "../components/Footer/Footer";
 import {Helmet} from "react-helmet";
 import NewBreadCrumb from "../components/UI/NewBreadcrumb/NewBreadCrumb";
 import { useTranslation } from 'react-i18next';
+import GoogleAdsConversionTracking from "../components/GoogleAdsConversionTracker/GoogleAdsConversionTracker";
 const AboutUs = () => {
     const backgroundImageUrl = 'https://res.cloudinary.com/dtcz2zuev/image/upload/v1707893084/alghawalimanpower/qubkrpihvvdey8uznlpm.jpg';
     const { t } = useTranslation();
@@ -16,6 +17,7 @@ const AboutUs = () => {
                 <meta name="keywords" content="nepali housemaid, sri lanka domestic worker,maids from nepal,indian housemaids, maid in muscat,nannies in Oman, cleaning service, nepal domestic help" />
                 <meta name="description" content="Are you trying to find housemaid services in Oman? Al Ghawali offers full-time housemaids in Muscat and other cities." />
                 <title>Housekeeping Services in Muscat | Al Ghawali</title>
+                <GoogleAdsConversionTracking />
             </Helmet>
             <Navbar />
             <div className="bg-cover" style={{ backgroundImage: `url(${backgroundImageUrl})`}}>

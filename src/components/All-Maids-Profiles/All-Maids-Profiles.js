@@ -46,14 +46,15 @@ const AllMaidsProfiles = ({ searchTerm , filterSearchTerm, selectedCountries, se
   const handleLoadMore = () => {
     setItemsToLoad(itemsToLoad + 6);
   };
+ 
 
   return (
     <>
       <div
-        className="allprofilesmaid space-y-4 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 md:space-y-0"
+        className="allprofilesmaid relative space-y-4 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 md:space-y-0"
         style={{ width: "70%" }}
       >
-
+          
         {loader ? (
           Array.from({ length: itemsToLoad }, (_, index) => (
             <SkeletonLoader key={uuidv4()} />

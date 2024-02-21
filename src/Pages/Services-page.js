@@ -7,6 +7,7 @@ import { Helmet } from "react-helmet";
 import NewBreadCrumb from "../components/UI/NewBreadcrumb/NewBreadCrumb";
 import NeedHelp from "../components/Need-Help/NeedHelp";
 import { useTranslation } from 'react-i18next';
+import GoogleAdsConversionTracking from "../components/GoogleAdsConversionTracker/GoogleAdsConversionTracker";
 
 const ServicesPage = () =>{
     const { t } = useTranslation();
@@ -19,6 +20,7 @@ const ServicesPage = () =>{
             <meta name="keywords" content="nepali housemaid, sri lanka domestic worker,maids from nepal,indian housemaids, maid in muscat,nannies in Oman, cleaning service, nepal domestic help" />
                 <meta name="description" content="Are you finding a housemaid,nannies and housekeeper at an affordable price?Al Ghawali is providing trained Maids in all over Oman." />
                 <title>Professional House Maid Services in Muscat | Al Ghawali</title>
+                <GoogleAdsConversionTracking />
             </Helmet>
             <Navbar />
             <div style={{ backgroundImage: `url(${backgroundImageUrl})`}} className="bg-cover">

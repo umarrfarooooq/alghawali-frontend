@@ -4,6 +4,7 @@ import MaidDetailMainSection from "../components/Maid-Detail/Main-Section/Maid-D
 import { Helmet } from "react-helmet";
 import NeedHelp from "../components/Need-Help/NeedHelp";
 import Footer from "../components/Footer/Footer";
+import GoogleAdsConversionTracking from "../components/GoogleAdsConversionTracker/GoogleAdsConversionTracker";
 
 const MaidDetail = () =>{
     const apiUrl = process.env.REACT_APP_API_URL;
@@ -15,6 +16,7 @@ const MaidDetail = () =>{
             <meta name="keywords" content="nepali housemaid, sri lanka domestic worker,maids from nepal,indian housemaids, maid in muscat,nannies in Oman, cleaning service, nepal domestic help" />
                 <meta name="description" content="Al Ghawali provides housekeeping services in Oman for household.For profesional housemaids contact us." />
                 <title>Your Trusted Housekeeping Partner in Muscat | Al Ghawali</title>
+                <GoogleAdsConversionTracking />
             </Helmet>
             <MaidDetailPageNavbar />
             <div style={{ backgroundImage: `url(${backgroundImageUrl})`}} className="bg-cover">
