@@ -12,8 +12,11 @@ import ButtonEl from "../components/UI/Button/Button";
 import AddCustomRequirmentsForm from "../components/CustomRequirements/AddCustomRequirement";
 import Backdrop from "../components/UI/BackDrop/Backdrop";
 import GoogleAdsConversionTracking from "../components/GoogleAdsConversionTracker/GoogleAdsConversionTracker";
+import NewBreadCrumb from "../components/UI/NewBreadcrumb/NewBreadCrumb";
+import { useTranslation } from 'react-i18next';
 
 const AllMaidsProfilePage = () => {
+  const { t } = useTranslation();
   const [searchTerm, setSearchTerm] = useState("");
   const [filterSearchTerm, setFilterSearchTerm] = useState("");
   const [isFilterOpen, setIsFilterOpen] = useState(false);
@@ -59,7 +62,6 @@ const AllMaidsProfilePage = () => {
 
       <Navbar />
       {isFormVisible && <Backdrop showBackdrop={true} zIndex={19} />}
-
       <div className="whatsapp fixed bottom-[25px] left-[25px] z-50">
         <a rel="noreferrer" target="_blank" href="https://wa.me/96877447716">
           <img
@@ -72,8 +74,14 @@ const AllMaidsProfilePage = () => {
 
       <div
         style={{ backgroundImage: `url(${backgroundImageUrl})` }}
-        className="bg-cover relative py-12"
+        className="bg-cover relative py-2 md:py-12"
       >
+        <NewBreadCrumb
+          pageName={t('breadcrumb.allProfiles.pageName')}
+          title={t('breadcrumb.allProfiles.title')}
+          discription={t('breadcrumb.allProfiles.description')}
+          calls={true}
+        />
         {isFormVisible && (
           <aside className="absolute z-[20] right-0 sm:right-8 -mt-8">
             <AddCustomRequirmentsForm onCloseForm={toggleFormVisibility} />
