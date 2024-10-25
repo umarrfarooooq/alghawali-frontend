@@ -13,7 +13,8 @@ import AddCustomRequirmentsForm from "../components/CustomRequirements/AddCustom
 import Backdrop from "../components/UI/BackDrop/Backdrop";
 import GoogleAdsConversionTracking from "../components/GoogleAdsConversionTracker/GoogleAdsConversionTracker";
 import NewBreadCrumb from "../components/UI/NewBreadcrumb/NewBreadCrumb";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
+import MobileFilterSection from "../components/Filter-Section/Mobile-Filters";
 
 const AllMaidsProfilePage = () => {
   const { t } = useTranslation();
@@ -77,9 +78,9 @@ const AllMaidsProfilePage = () => {
         className="bg-cover relative py-2 md:py-12"
       >
         <NewBreadCrumb
-          pageName={t('breadcrumb.allProfiles.pageName')}
-          title={t('breadcrumb.allProfiles.title')}
-          discription={t('breadcrumb.allProfiles.description')}
+          pageName={t("breadcrumb.allProfiles.pageName")}
+          title={t("breadcrumb.allProfiles.title")}
+          discription={t("breadcrumb.allProfiles.description")}
           calls={true}
         />
         {isFormVisible && (
@@ -133,11 +134,15 @@ const AllMaidsProfilePage = () => {
         </div>
         <div className="md:hidden container flex items-start sm:items-center  flex-col sm:flex-row justify-between gap-2">
           <Search onSearch={setSearchTerm} />
+          <MobileFilterSection
+            setSelectedCountries={setSelectedCountries}
+            filteredCountries={selectedCountries}
+          />
           <div
             onClick={handleFilterToggle}
             className="bg-blue-950 p-3 rounded-md"
           >
-            <span>
+            <span className="flex items-center gap-1 text-[#FDFCFF]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -153,6 +158,7 @@ const AllMaidsProfilePage = () => {
                   stroke-linejoin="round"
                 />
               </svg>
+              Additional Filters
             </span>
           </div>
         </div>
