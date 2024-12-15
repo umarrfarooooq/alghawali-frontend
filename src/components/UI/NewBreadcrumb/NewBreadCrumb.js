@@ -54,19 +54,13 @@ const NewBreadCrumb = (props) => {
             {props.calls && (
               <>
                 <div className="flex items-center gap-2">
-                  <a href="tel:+96877447718">
-                    <div className="bg-[#253061] p-2 rounded-lg w-max cursor-pointer">
-                      <CallIcon htmlColor="#FFFAFC" />
-                    </div>
-                  </a>
-
                   <a href="tel:+96877447708">
                     <div className="bg-[#253061] p-2 rounded-lg w-max cursor-pointer">
                       <CallIcon htmlColor="#FFFAFC" />
                     </div>
                   </a>
 
-                  <a rel="noreferrer" target="_blank" href="https://wa.me/+96877447708">
+                  <a rel="noreferrer" target="_blank" href="https://wa.me/+96877447716">
                     <div className="bg-[#C3D0D4] p-2 rounded-lg w-max cursor-pointer">
                       <WhatsAppIcon htmlColor="#107243" />
                     </div>
